@@ -1,5 +1,5 @@
 class YoutubesController < ApplicationController
-  before_action :set_key, only: [:find_videos, :results, :new, :create, :show, :edit, :update]
+
 
   
   # GET /youtubes

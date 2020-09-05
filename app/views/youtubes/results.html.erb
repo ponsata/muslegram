@@ -1,3 +1,5 @@
+<%= link_to "みんなの検索一覧", youtubes_path %>
+
 <div class = "search">
   <%= form_tag(find_videos_youtubes_path, method: :get) do %>
     <%= text_field_tag :search, "", placeholder:"何かお探しですか？"%> 
@@ -17,10 +19,4 @@
     
   <% end %>  
 <% end %>
-  <%# @youtube_data.each do |youtube| %>
-    <tr>
-     <td><%#= link_to 'Show', youtube %></td>
-      <td><%#= link_to 'Edit', edit_youtube_path(youtube) %></td>
-      <td><%#= link_to 'Destroy', youtube, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <%# end %>
+  
