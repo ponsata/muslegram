@@ -14,11 +14,13 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
+    
     @message = Message.new
   end
 
   # GET /messages/1/edit
   def edit
+
   end
 
   # POST /messages
