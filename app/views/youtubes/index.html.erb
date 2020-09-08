@@ -1,8 +1,9 @@
 <%= link_to "動画を探しに行く", find_videos_youtubes_path %>
 <% @youtubes.each do |youtube| %>
-   <div> 
-     <%= youtube.channel_title %>
-   </div> 
+   
+  <div> 
+    <%= youtube.channel_title %>
+  </div> 
   <div>
     <iframe width="356" height="200" src="https://www.youtube.com/embed/<%= youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
@@ -10,6 +11,6 @@
   <div>
     <%= youtube.description%>
   </div>
-  <%= link_to "投稿する", new_youtube_path(@youtube) %>
+  <%= link_to "投稿する", new_youtube_message_path(@youtube) %>
 <% end %>
 
