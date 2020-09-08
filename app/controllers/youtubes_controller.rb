@@ -1,7 +1,5 @@
 class YoutubesController < ApplicationController
-
-
-  
+ 
   # GET /youtubes
   # GET /youtubes.json
 

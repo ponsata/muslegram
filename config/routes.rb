@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  
-  #get 'users/index'
-  #get 'users/show'
+  devise_for :users
   root to: "youtubes#index"
+ 
   resources :youtubes do
     collection do
       get 'find_videos',     to: 'youtubes#results'
@@ -10,5 +9,5 @@ Rails.application.routes.draw do
     end
     resources :messages, only:[:index, :new, :create, :show, :destroy]
   end
-  
+  resources :users, only:[:show]
 end
