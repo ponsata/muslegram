@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.all.includes(:user, :youtube)
   end
 
   # GET /messages/1
@@ -14,7 +14,11 @@ class MessagesController < ApplicationController
   end
 
   # GET /messages/new
-  def new
+  def new 
+
+    @video_id = params[:video_id]
+    @channel_title = params[:channel_title]
+    @title = params[:title]
     @message = Message.new
   end
 
@@ -27,30 +31,17 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
-      else
-        format.html { render :new }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    if @message.save
+      redirect_to youtube_messages_path
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
   def update
-    respond_to do |format|
-      if @message.update(message_params)
-        format.html { redirect_to @message, notice: 'Message was successfully updated.' }
-        format.json { render :show, status: :ok, location: @message }
-      else
-        format.html { render :edit }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
-    end
+ 
   end
 
   # DELETE /messages/1
@@ -71,6 +62,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.fetch(:message, {})
+      params.require(:message).permit(:title, :explanation).merge(user_id: current_user.id, youtube_id: params[:youtube_id])
     end
 end
