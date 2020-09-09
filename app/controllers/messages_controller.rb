@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new 
-
+    @youtube_id = params[:youtube_id]
     @video_id = params[:video_id]
     @channel_title = params[:channel_title]
     @title = params[:title]
@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to youtube_messages_path
+      redirect_to messages_path
     else
       render :new
     end
@@ -48,9 +48,7 @@ class MessagesController < ApplicationController
   # DELETE /messages/1.json
   def destroy
     @message.destroy
-    respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
-      format.json { head :no_content }
+  
     end
   end
 
@@ -62,6 +60,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.require(:message).permit(:title, :explanation).merge(user_id: current_user.id, youtube_id: params[:youtube_id])
+      params.require(:message).permit(:title, :explanation).merge(user_id: current_user.id, youtube_id: params[:youtube_id] )
     end
 end

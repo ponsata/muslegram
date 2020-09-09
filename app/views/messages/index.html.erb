@@ -1,4 +1,10 @@
 <% @messages.each do |message| %>
+  
+  <div> 
+    投稿者
+    <%= message.user.nickname %>
+  </div> 
+  
   <div> 
     <%= message.youtube.channel_title %>
   </div> 
