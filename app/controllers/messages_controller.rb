@@ -49,7 +49,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
   
-    end
+    
   end
 
   private
