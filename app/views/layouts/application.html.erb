@@ -4,6 +4,7 @@
     <title>muslegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <% link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -26,21 +27,7 @@
       
       </ul>
     </header>
-    <div class="back"></div>
-    <label id ="ico">
-      <i class="fas fa-bars"></i>
-    </label>
-<header>
 
-<script>
-  $(document).ready(function(){
-    $('#ico').click(function(){
-      $('ul').toggleClass('show');
-    });
-  });
-</script>
-
-  
 
 <%= yield %>
 <footer>
