@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    
   end
 
   # GET /messages/new
@@ -49,7 +50,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
   
-    end
+    
   end
 
   private

@@ -4,26 +4,82 @@
     <title>muslegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <nav>
-        <% if user_signed_in? %> 
-          <%= link_to 'プロフィール変更', edit_user_registration_path %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <label><a class="mainheader" href="/">muslegram</a></label>
+
+      <ul>
+        <li><%= link_to 'HOME画面', root_path %></li>
+        <li><%= link_to "動画を検索する", find_videos_youtubes_path %></li>
+        <li><%= link_to "投稿みる", messages_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <% else %>
-          <%= link_to "新規登録", new_user_registration_path %> |
-          <%= link_to "ログイン", new_user_session_path %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
         <% end %>
-      </nav>
+      
+      </ul>
     </header>
+    <div class="back"></div>
+    <label id ="ico">
+      <i class="fas fa-bars"></i>
+    </label>
+<header>
+
+<script>
+  $(document).ready(function(){
+    $('#ico').click(function(){
+      $('ul').toggleClass('show');
+    });
+  });
+</script>
 
   
 
-    <%= yield %>
+<%= yield %>
+<footer>
+  <div class="main-content">
+    <div class="left box">
+        <h2>About us</h2>
+        <div class="content">
+            <p>こちらのサービスはポートフォリオです。</p>
+            <div class="social">
+                <a href="https://github.com/takahirosatake"><span class="fab fa-github"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="center box">
+        <h2>Address</h2>
+        <div class="content">
+            <div class="place">
+                <span class="fas fa-map-marker-alt"></span>
+                <span class="text">Tokyo,</span>
+            </div>
+            <div class="phone">
+                <span class="fas fa-phone-alt"></span>
+                <span class="text">000-0000-0000</span>
+            </div>
+            <div class="email">
+                <span class="fas fa-envelope"></span>
+                <span class="text">khr.04237@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="right box">
+        
+    </div>
+    </div>
+    <div class="bottom">
+      <div>
+        <span class="far fa-copyright"></span><span>2020 All right reserved.</span>
+    </div>
+  </div>
+</footer>
   </body>
 </html>
