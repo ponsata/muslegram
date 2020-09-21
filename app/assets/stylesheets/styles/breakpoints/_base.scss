@@ -1,0 +1,42 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+body {
+  font-family: 'Kameron','Noto Sans JP', sans-serif;
+}
+
+.font-sm {
+  font-size: 16px;
+}
+
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+
+//bootstlap spacing
+
+.mb-sm {
+    margin-bottom:16px !important;
+}
+.mb-lg {
+    margin-bottom:80px !important;
+}
+
+.pb-sm {
+    padding-bottom:16px !important;
+}
+
+.content-with {
+    width:90%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
