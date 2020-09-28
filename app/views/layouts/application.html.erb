@@ -4,69 +4,115 @@
     <title>muslegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet" %>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  </head>
 
   <body>
-    <header>
-      <label><a class="mainheader" href="/">muslegram</a></label>
+    <div id="global-container">
+      <div id="container">
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <span class="logo__stay"><%= link_to "Musle", root_path, method: :get %></span>
+              <span class="logo__world"><%= link_to "Gram", root_path, method: :get %></span>
+            </div>
+            <div class = "search">
+              <%= form_tag(find_videos_youtubes_path, method: :get) do %>
+                <%= text_field_tag :search, "", placeholder:"何かお探しですか？"%> 
+                <%= submit_tag 'search' %>
+              <% end %>
+            </div>  
+            <nav class="header__nav">
+              <ul class="header__ul">
+                <li class="header__li item"><%= link_to "投稿みる", messages_path, method: :get %></li>
+                <% if user_signed_in? %>
+                  <li class="header__li item"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
+                  <li class="header__li item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                   <li class="header__li item"><%= link_to "新規登録", new_user_registration_path, method: :get %></li>
+                   <li class="header__li item"><%= link_to "ログイン", new_user_session_path, method: :get %></li>
+                <% end %>
+                <!--li class="header__li item">
+                  <a class="btn filled" href="#">Contact</a>
+                </li> -->
+              </ul>
+            </nav>
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
 
-      <ul>
-        <li><%= link_to 'HOME画面', root_path %></li>
-        <li><%= link_to "動画を検索する", find_videos_youtubes_path %></li>
-        <li><%= link_to "投稿みる", messages_path %></li>
-        <% if user_signed_in? %>
-          <li><%= link_to "マイページ", user_path(current_user.id) %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-        <% end %>
-      
-      </ul>
-    </header>
-
-
-<%= yield %>
-<footer>
-  <div class="main-content">
-    <div class="left box">
-        <h2>About us</h2>
-        <div class="content">
-            <p>こちらのサービスはポートフォリオです。</p>
-            <div class="social">
-                <a href="https://github.com/takahirosatake"><span class="fab fa-github"></span></a>
-            </div>
-        </div>
-    </div>
-    <div class="center box">
-        <h2>Address</h2>
-        <div class="content">
-            <div class="place">
-                <span class="fas fa-map-marker-alt"></span>
-                <span class="text">Tokyo,</span>
-            </div>
-            <div class="phone">
-                <span class="fas fa-phone-alt"></span>
-                <span class="text">000-0000-0000</span>
-            </div>
-            <div class="email">
-                <span class="fas fa-envelope"></span>
-                <span class="text">khr.04237@gmail.com</span>
-            </div>
-        </div>
-    </div>
-    <div class="right box">
+        <%= yield %>
         
+        <footer class='footer appear up '>
+          <div class="logo item">
+            <span class="logo__stay">Musle</span>
+            <span class="logo__world">Gram</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class='footer__ul'>
+              <li class="footer__li item">
+                <div class="main-title">Address
+                  <div>
+                    <span class="fas fa-map-marker-alt sub-title"></span>
+                    <span class="sub-title">Tokyo,</span>
+                  </div>
+                  <div>
+                    <span class="fas fa-envelope sub-title"></span>
+                    <span class="sub-title">khr.04237@gmail.com</span>
+                  </div>  
+                </div>
+              </li>
+              <li class="footer__li item">
+                <div class="main-title">About us
+                  <div>
+                    <span class="fab fa-github sub-title"></span>
+                    <%= link_to "こちらのサービスはポートフォリオです。", "https://github.com/takahirosatake", class: "sub-title" %>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="footer__copyright">
+              &copy;2020 All right reserved.
+            </div>
+          </nav>
+        </footer>
+      </div>
+      <nav class="mobile-menu">
+          <div class="logo item">
+            <span class="logo__stay">Musle</span>
+            <span class="logo__world">Gram</span>
+          </div> 
+          <ul class="mobile-menu__main">
+              <li class="mobile-menu__item">
+                <%= link_to "投稿みる", messages_path, class: "mobile-menu__link main-title", method: :get %>
+              </li>
+              <% if user_signed_in? %>
+                <li class="mobile-menu__item">
+                  <%= link_to "マイページ", user_path(current_user.id), class: "mobile-menu__link main-title", method: :get%>
+                </li>
+                <li class="mobile-menu__item">
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "mobile-menu__link main-title", method: :get %>
+                </li>
+              <% else %>
+                <li class="mobile-menu__item">
+                  <%= link_to "新規登録", new_user_registration_path, class: "mobile-menu__link main-title", method: :get %>
+                </li>
+                <li class="mobile-menu__item">
+                  <%= link_to "ログイン", new_user_session_path, class: "mobile-menu__link main-title", method: :get %>
+                </li>
+              <% end %>
+          </ul>
+      </nav>
     </div>
-    </div>
-    <div class="bottom">
-      <div>
-        <span class="far fa-copyright"></span><span>2020 All right reserved.</span>
-    </div>
-  </div>
-</footer>
   </body>
 </html>

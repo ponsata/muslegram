@@ -1,11 +1,14 @@
-@import 'styles/vendors/bootstrap-reboot';
-@import "styles/modules/variables";
-@import "styles/modules/mixin"; 
-@import "styles/modules/hero-slider"; 
+@import 'loader';
+@import 'styles/modules/variables';
+@import 'styles/modules/mixin';
+@import 'styles/modules/appear';
+@import 'styles/modules/button';
+@import 'styles/modules/text-animation';
+@import 'styles/modules/image-slide';
+@import 'styles/modules/mobile-menu';
+@import "styles/breakpoints/youtubes";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-
-@import "styles/breakpoints/base";
 
 @media (min-width: 480px) {
   @import "styles/breakpoints/480up";
@@ -18,17 +21,20 @@
 }
 @media (min-width: 1280px) {
   @import "styles/breakpoints/1280up";
+  
 }
 @media (min-resolution: 1280px) {
   @import "styles/breakpoints/1280up";
+  
 }
 @media (min-resolution: 192dpi) 
-       ,(-webkit-min-device-ixel-ratio: 2) {
-       @import "styles/breakpoints/2x";
+,(-webkit-min-device-ixel-ratio: 2) {
+  @import "styles/breakpoints/2x";
+  
 }
 
 @media print {
-       @import "styles/breakpoints/2x";
+  @import "styles/breakpoints/2x";
 }
 
 
