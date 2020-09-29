@@ -8,6 +8,12 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     flex-wrap: wrap;
 }
 
+.header {
+    &__search {
+        display: block;
+    }
+}
+
 .youtubes {
     &__item {
         flex-basis: 25%;

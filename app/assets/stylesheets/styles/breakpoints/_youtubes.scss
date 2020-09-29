@@ -92,7 +92,40 @@ main {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
   }
-
+  &__search {
+    display: none;
+    &__box {
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid #999;
+      display: block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      height: 2.3em;
+      width: 265px;
+      overflow: hidden;
+    }
+    &__word{
+      border: none;
+      height: 2.0em;
+    }
+    &__word:focus{
+      outline: 0;
+    }
+    &__submit {
+      cursor: pointer;
+      border: none;
+      background: $cBlack;
+      color: $cWhite;
+      position: absolute;
+      width: 3.5em;
+      height: 3.0em;
+      right:0px;
+      top: -3px;
+      outline : none;
+    }
+    
+  }
   &__nav {
     display: none;
   }
@@ -265,24 +298,3 @@ main {
   }
 }
 
-.icon {
-  position: relative;
-
-  @include p-base($left: -20px, $top: 50%, $width: 1em, $height: 1em) {
-    transform: translateY(-50%);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  &.twitter{
-    &::before {
-      background-image: url(../images/twitter.svg);
-    }
-  }
-  &.fb{
-    &::before {
-      background-image: url(../images/facebook.svg);
-    }
-  }
-}

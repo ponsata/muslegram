@@ -22,10 +22,14 @@
               <span class="logo__stay"><%= link_to "Musle", root_path, method: :get %></span>
               <span class="logo__world"><%= link_to "Gram", root_path, method: :get %></span>
             </div>
-            <div class = "search">
+            <div class = "header__search">
               <%= form_tag(find_videos_youtubes_path, method: :get) do %>
-                <%= text_field_tag :search, "", placeholder:"何かお探しですか？"%> 
-                <%= submit_tag 'search' %>
+                <div class="header__search__box">
+                  <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
+                  <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
+                    <i class="fa fa-search"></i>
+                  <% end %>
+                </div>  
               <% end %>
             </div>  
             <nav class="header__nav">
@@ -38,9 +42,6 @@
                    <li class="header__li item"><%= link_to "新規登録", new_user_registration_path, method: :get %></li>
                    <li class="header__li item"><%= link_to "ログイン", new_user_session_path, method: :get %></li>
                 <% end %>
-                <!--li class="header__li item">
-                  <a class="btn filled" href="#">Contact</a>
-                </li> -->
               </ul>
             </nav>
             <button class="mobile-menu__btn">
@@ -91,7 +92,17 @@
           <div class="logo item">
             <span class="logo__stay">Musle</span>
             <span class="logo__world">Gram</span>
-          </div> 
+          </div>
+          <div class = "mobile-menu__search">
+            <%= form_tag(find_videos_youtubes_path, method: :get) do %>
+              <div class="mobile-menu__search__box">
+                <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
+                  <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
+                    <i class="fa fa-search"></i>
+                  <% end %>
+              </div>  
+            <% end %>
+          </div>  
           <ul class="mobile-menu__main">
               <li class="mobile-menu__item">
                 <%= link_to "投稿みる", messages_path, class: "mobile-menu__link main-title", method: :get %>
@@ -101,7 +112,7 @@
                   <%= link_to "マイページ", user_path(current_user.id), class: "mobile-menu__link main-title", method: :get%>
                 </li>
                 <li class="mobile-menu__item">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "mobile-menu__link main-title", method: :get %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "mobile-menu__link main-title" %>
                 </li>
               <% else %>
                 <li class="mobile-menu__item">
