@@ -1,22 +1,32 @@
-<%= link_to "みんなの検索一覧", youtubes_path %>
-
-<div class = "search">
-  <%= form_tag(find_videos_youtubes_path, method: :get) do %>
-    <%= text_field_tag :search, "", placeholder:"何かお探しですか？"%> 
-    <%= submit_tag 'search' %>
-  <% end %>
-</div>  
-
-<% if @youtubes.blank? %>
-  <%= flash[:alert] %>
-<% else %>
-  <% @youtubes.items.each do |item| %>
-    <% @snippet = item.snippet %>
-    <% @video_id = item.id.video_id %>
-    <p><%= @snippet.title %></p>
-    <p><%= @snippet.published_at %><%= @snippet.channel_title %></p>
-    <div><iframe width="356" height="200" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    
-  <% end %>  
-<% end %>
-  
+<div id="content">
+  <div id= "main-content">
+    <div class="youtubes">
+      <div>
+        <h2 class="main-title tween-animate-title">Find Your Videos</h2>
+      </div>
+      <div class="youtubes__inner">
+        <% if @youtubes.blank? %>
+          <div class="result-none sub-title">
+            <%= flash[:alert] %>
+          </div>
+        <% else %>
+          <% @youtubes.items.each do |item| %>
+            <% @snippet = item.snippet %>
+            <% @video_id = item.id.video_id %>
+            <div class="youtubes__item appear up">
+              <div class= "youtubes__box item">
+                <iframe src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="youtubes__channel">
+                  <%= @snippet.channel_title  %> 
+                </div>
+                <div class="youtubes__description sub-title">
+                  <%= @snippet.title%>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

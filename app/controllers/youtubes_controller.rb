@@ -17,7 +17,7 @@ class YoutubesController < ApplicationController
       opt = {
         q: keyword,
         type: 'video',
-        max_results: 5,
+        max_results: 12,
         order: :date,
         page_token: next_page_token,
         published_after: after.iso8601,
@@ -26,7 +26,6 @@ class YoutubesController < ApplicationController
       youtube.list_searches(:snippet, opt)
     else 
       return 
-    
     end
     
   end
@@ -34,7 +33,7 @@ class YoutubesController < ApplicationController
   def results
     @youtubes = find_videos(@keyword)
     if @youtubes.blank? 
-      flash[:alert] = " 検索ワード入れてください。"
+      flash[:alert] = " 該当する動画がありません"
     else
       @youtubes.items.each do |item| 
         youtube = Youtube.new
