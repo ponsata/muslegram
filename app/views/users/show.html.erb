@@ -1,2 +1,23 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div id="content">
+  <div id= "main-content">
+    <div class="userbox">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class ="userbox__inner">
+        <div class= "userbox__top">
+          <div class= "userbox__top__left">
+            <!-- アイコン表示部分-->
+            <div class= "userbox__top__left__icon">
+              <% if @user.image.present? %>  
+                <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
+              <% end %>  
+            </div>  
+          </div>
+        </div>
+      </div>
+      <div class ="userbox__bottom">
+        <%= link_to "編集", edit_user_path, method: :get %>
+      </div>
+    </div>
+  </div>
+</div>

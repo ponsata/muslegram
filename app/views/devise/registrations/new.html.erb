@@ -1,32 +1,74 @@
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true %>
+<div id="content">
+  <div id= "main-content">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="acount-page">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="acount-page__inner clearfix">
+        <div class="acount-page__inner__left acount-page__header">
+          <h2 class="main-title">Sign Up</h2>
+          <span class= "sub-title">新規アカウントの作成 </span>
+          <span><%= render "devise/shared/links" %> </span>
+        </div>  
+        <div class="acount-page__inner__right user-form">  
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class= "acount-page__inner__right__icon">
+              <div class= "acount-page__inner__right__icon__label">
+                <div class ="acount-page__inner__right__icon__input">
+                  <span class="acount-page__inner__right__icon__input__noimage"></span>
+                    <div class= "acount-page__inner__right__icon__input__image2">
+                      <%= f.file_field :image, class: "acount-page__inner__right__icon__input__btn", id:"upload-icon" %>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="field">
+              <div class="field-label">
+                <%= f.label :nickname %>
+              </div>
+              <div class="field-input">
+                <%= f.text_field :nickname, autofocus: true %>
+              </div>
+            </div>
+    
+            <div class="field">
+              <div class="field-label">
+                <%= f.label :email %>
+              </div>
+              <div class="field-input">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+              </div>
+            </div>
+    
+            <div class="field">
+              <div class="field-label">
+                <%= f.label :password %>
+              </div>
+              <div class="field-input">
+                <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %>
+                <%= f.password_field :password, autocomplete: "new-password" %>
+              </div>
+            </div>
+    
+            <div class="field">
+              <div class="field-label">
+                <%= f.label :password_confirmation %>
+              </div>
+              <div class="field-input">
+                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
+            </div>
+    
+            <div class="actions">
+              <%= f.submit "Sign up",  class: "btn"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

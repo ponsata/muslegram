@@ -1,0 +1,307 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family: "Kameron", "Noto Sans JP", sans-serif;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+.main-title {
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: block;
+}
+.sub-title {
+  @extend .font-sm;
+  color: $cSubTitle;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+.purple {
+  color: $cRed;
+}
+
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: -1;
+}
+
+#container {
+  background-color: $cWhite;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.acount-page {
+  @extend .content-width;
+  @extend .mb-lg;
+  padding-top: $navHeight;
+  &__inner {
+    margin: 60px auto;
+    padding: 60px;
+    @extend .flex;
+    &__left {
+      
+      & > span {
+        display: block;
+    }
+    }
+    &__right{
+
+      &__icon {
+
+        &__input {
+          overflow: hidden;
+          margin: auto;
+          width: 180px;
+          height: 180px;
+          border-radius: 100px;
+          border: 1px solid $cBgGray;
+          overflow: hidden;
+          position: relative;
+          &__image {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          &__noimage {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+          }
+          &__image2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          &__btn {
+            position: absolute;
+            top: 0;
+            width: 180px;
+            height: 180px;
+            border-radius: 100px;
+            font-size: 0px;
+            opacity: 0;
+            cursor: pointer;
+          }
+        }
+        
+      }
+    }
+    &:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+
+  .account-page__header {
+    h2 {
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 40px;
+      font-weight: 200;
+
+      &:after {
+        content: '';
+        display: block;
+        width: 300px;
+        margin-top: 5px;
+        border-bottom: 1px solid $cBlack;
+      }
+    }
+
+    h5 {
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 200;
+    }
+
+    .btn {
+      margin-top: 20px;
+      color: #fff;
+      background-color: silver;
+      font-size: 14px;
+    }
+  }
+
+  .field {
+    margin-bottom: 10px;
+
+    .field-label {
+      padding: 10px 0;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: 200;
+
+      i {
+        font-size: 11px;
+      }
+    }
+
+    .field-input {
+      input {
+        width: 100%;
+        padding: 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+
+  input[type='submit'] {
+    float: left;
+    margin-top: 20px;
+    color: $cWhite;
+    background-color: $cBlack;
+  }
+
+  .field-label {
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+  }
+
+  .field-input {
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+}
+
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #d65f4c;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 17px;
+    list-style: square;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
+.icon-image {
+  width: 200px;
+  height: 200px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
+
+
+.userbox {
+  @extend .content-width;
+  @extend .mb-lg;
+  padding-top: $navHeight;
+  &__inner {
+    @extend .flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @extend .font-lr;
+    @extend .mb-sm;
+  }
+  &__description {
+    width: 303px;
+    height: 100px;
+    overflow: scroll;
+  }
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+  }
+  &_box {
+    &  iframe {
+      width: 303px;
+      height: 170px;
+    }
+  }
+  &__channel {
+    width: 100%;
+    height: 24px;
+    overflow: hidden;
+  }
+}

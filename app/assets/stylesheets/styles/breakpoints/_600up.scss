@@ -13,7 +13,23 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         display: block;
     }
 }
-
+.acount-page {
+    &__inner {
+        justify-content: space-between;
+        width: 980px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        &__left {
+            flex-basis: 50%;
+            & > span {
+                display: block;
+            }
+        }
+        &__right {
+            flex-basis: 45%;
+        }
+    }
+}
 .youtubes {
     &__item {
         flex-basis: 25%;
