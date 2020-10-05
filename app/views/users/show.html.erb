@@ -4,19 +4,58 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <div class ="userbox__inner">
-        <div class= "userbox__top">
-          <div class= "userbox__top__left">
-            <!-- アイコン表示部分-->
-            <div class= "userbox__top__left__icon">
-              <% if @user.image.present? %>  
-                <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
-              <% end %>  
-            </div>  
-          </div>
+        <div class= "userbox__left">
+          <div class= "userbox__left__icon">
+            <% if @user.image.present? %>  
+              <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
+            <% end %>  
+          </div>  
         </div>
+        <section class="userbox__right">
+          <div class="user-box__header">
+            <h2 class="user-box__name main_title">
+              <%= @user.nickname%>
+            </h2>
+            <div class="user-box__edit">
+              <%= link_to "プロフィールを編集", edit_user_path, method: :get %>
+            </div>
+          </div>
+          <div class="user-box_messages">
+            投稿数 2
+          </div>
+          <div class="user-box-profile">
+            趣味は、筋トレです。
+            一緒に筋トレやりましょう！！
+          </div>
+        </section>
       </div>
-      <div class ="userbox__bottom">
-        <%= link_to "編集", edit_user_path, method: :get %>
+    </div>
+    <div class="youtubes">
+      <div>
+        <h2 class="main-title tween-animate-title">My Playlists</h2>
+      </div>
+      <div class="youtubes__inner">
+        <% @playlist_youtubes.each do |youtube| %>
+          <% @youtube = youtube%> 
+          <div class="youtubes__item appear up">
+            <div class= "youtubes__box item">
+              <iframe src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="youtubes__channel">
+                <%= @youtube.channel_title %> 
+              </div>
+              <div class="youtubes__description sub-title">
+                <%= @youtube.description%>
+              </div>
+              <div class="youtubes__playlist">
+                <% if youtube.playlist_by?(current_user) %>
+                  <%= link_to "Remove",  youtube_playlists_path(youtube), method: :delete %>
+                <% else %>
+                  <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

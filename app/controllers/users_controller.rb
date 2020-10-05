@@ -7,6 +7,7 @@ before_action :authenticate_user!, only: [:show, :edit, :update]
   end
   
   def update
+    
     if current_user.update(user_params)
       redirect_to user_path(current_user)
     else
@@ -16,7 +17,7 @@ before_action :authenticate_user!, only: [:show, :edit, :update]
   
   def show
     @user = User.find(params[:id])
-
+    @playlist_youtubes = @user.playlists.map{|playlist| playlist.youtube}
   end
   
   private
