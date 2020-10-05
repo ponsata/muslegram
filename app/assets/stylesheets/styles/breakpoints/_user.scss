@@ -273,7 +273,6 @@ main {
 
 .userbox {
   @extend .content-width;
-  @extend .mb-lg;
   padding-top: $navHeight;
   &__inner {
     @extend .flex;

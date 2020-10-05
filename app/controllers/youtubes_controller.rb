@@ -2,7 +2,7 @@ class YoutubesController < ApplicationController
  
   # GET /youtubes
   # GET /youtubes.json
-
+  before_action :authenticate_user!, only: [:find_videos, :results] 
   
   require 'google/apis/youtube_v3' #YoutubeV3を使用するために、呼び出す
   require 'optimist'
@@ -50,13 +50,14 @@ class YoutubesController < ApplicationController
   end
 
   def index
-    @youtubes = Youtube.all
-  end
-  # GET /youtubes/1
-  # GET /youtubes/1.json
-  def show
+    @youtubes = Youtube.all.includes(:playlists)
 
+    if user_signed_in?
+      @playlist = current_user.playlists.includes(user: :youtube)
+    end
+   
   end
+
 
   
 end

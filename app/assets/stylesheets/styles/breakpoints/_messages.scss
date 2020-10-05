@@ -1,0 +1,179 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Helpers
+
+body {
+   font-family: "Kameron", "Noto Sans JP", sans-serif;
+ }
+ img {
+   max-width: 100%;
+   vertical-align: bottom;
+ }
+ .font-sm {
+   font-size: 14px;
+ }
+ .font-md {
+   font-size: 17px;
+ }
+ .font-lr {
+   font-size: 17px;
+ }
+ .font-lg {
+   font-size: 25px;
+ }
+ .mb-sm {
+   margin-bottom: 16px !important;
+ }
+ .mb-lg {
+   margin-bottom: 80px !important;
+ }
+ .pb-sm {
+   padding-bottom: 16px !important;
+ }
+ .pb-lg {
+   padding-bottom: 80px !important;
+ }
+ .content-width {
+   width: 90%;
+   margin: 0 auto;
+   max-width: $contentMaxWidth;
+ }
+ .main-title {
+   @extend .font-lg;
+   font-weight: 600;
+   margin-bottom: 0;
+   display: block;
+ }
+ .sub-title {
+   @extend .font-sm;
+   color: $cSubTitle;
+ }
+ .flex {
+   display: flex;
+   flex-direction: column;
+ }
+ .purple {
+   color: $cRed;
+ }
+ 
+ #main-content {
+   position: relative;
+   z-index: 0;
+ }
+ 
+ main {
+   position: relative;
+   z-index: -1;
+ }
+ 
+ #container {
+   background-color: $cWhite;
+   position: relative;
+   z-index: 10;
+   transition: transform 0.5s, box-shadow 0.5s;
+ }
+ 
+
+@mixin clearfix {
+   &:after {
+      content: "";
+      display: flex;
+      clear: both;
+  }
+}
+
+.align-center {
+   text-align: center;
+}
+
+// Grid
+.row {
+   @include clearfix;
+   .col {
+      padding: 0 20px;
+      box-sizing: border-box;
+      &.x-50 {
+         width: 50%;
+      }
+      &.x-100 {
+         width: 100%;
+      }
+   }
+}
+
+
+.messages {
+   max-width: 650px;
+   margin: 0 auto;
+   position: relative;
+   top: 50%;
+   @extend .content-width;
+   @extend .mb-lg;
+   padding-top: $navHeight;
+  &__title {
+     text-align: center;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-size: 36px;
+     line-height: 48px;
+  }
+  &__video {
+     &  iframe {
+      width: 435px; 
+      height: 244px;
+     }
+  }
+}
+
+.contact-form {
+   .form-field {
+      position: relative;
+      margin: 32px 0;
+   }
+   .input-text {
+      display: block;
+      width: 100%;
+      height: 36px;
+      border-width: 0 0 2px 0;
+      border-color: #000;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 400;
+      
+      &:focus {
+         outline: none;
+      }
+      
+      &:focus,
+      &.not-empty {
+         + .label {
+            transform: translateY(-24px);
+         }
+      }
+   }
+   .label {
+      position: absolute;
+      left: 20px;
+      bottom: 11px;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 400;
+      color: #888;
+      cursor: text;
+      transition: transform .2s ease-in-out;
+   }
+   
+   .submit-btn {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+   }
+}
