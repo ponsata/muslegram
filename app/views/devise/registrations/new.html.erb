@@ -1,7 +1,5 @@
 <div id="content">
   <div id= "main-content">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="acount-page">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -17,10 +15,10 @@
             <div class= "acount-page__inner__right__icon">
               <div class= "acount-page__inner__right__icon__label">
                 <div class ="acount-page__inner__right__icon__input">
-                  <span class="acount-page__inner__right__icon__input__noimage"></span>
-                    <div class= "acount-page__inner__right__icon__input__image2">
-                      <%= f.file_field :image, class: "acount-page__inner__right__icon__input__btn", id:"upload-icon" %>
-                    </div>
+                    <%= image_tag asset_path("account-icon/account-icon.jpeg"), id: :img_prev %>
+                  <div class= "acount-page__inner__right__icon__input__image">
+                    <%= f.file_field :image, class: "acount-page__inner__right__icon__input__btn", id:"user_img" %>
+                  </div>
                 </div>
               </div>
             </div>
@@ -48,7 +46,7 @@
               </div>
               <div class="field-input">
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em>(<%= @minimum_password_length %> 桁のパスワードで設定してくだい)</em>
                 <% end %>
                 <%= f.password_field :password, autocomplete: "new-password" %>
               </div>
@@ -60,6 +58,15 @@
               </div>
               <div class="field-input">
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">
+                <%= f.label :profile %>
+              </div>
+              <div class="field-input">
+                <%= f.text_area :profile, autofocus: true %>
               </div>
             </div>
     

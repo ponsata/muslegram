@@ -4,6 +4,7 @@
     <title>musclegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +20,7 @@
           <div class="header__inner appear up">
             <div class="logo item">
               <span class="logo__muscle"><%= link_to "Muscle", root_path, method: :get %></span>
-              <span class="logo__world"><%= link_to "Gram", root_path, method: :get %></span>
+              <span class="logo__gram"><%= link_to "Gram", root_path, method: :get %></span>
             </div>
             <div class = "header__search">
                <% if user_signed_in? %>
@@ -35,7 +36,7 @@
             </div>  
             <nav class="header__nav">
               <ul class="header__ul">
-                <li class="header__li item"><%= link_to "HOME", root_path, method: :get %></li>
+                <li class="header__li item"><%= link_to "ホーム", root_path, method: :get %></li>
                 <li class="header__li item"><%= link_to "投稿みる", messages_path, method: :get %></li>
                 <% if user_signed_in? %>
                   <li class="header__li item"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
@@ -58,7 +59,7 @@
         
         <footer class='footer appear up '>
           <div class="logo item">
-            <span class="logo__muscle">Musle</span>
+            <span class="logo__muscle">Muscle</span>
             <span class="logo__gram">Gram</span>
           </div>
           <nav class="footer__nav">
@@ -92,8 +93,8 @@
       </div>
       <nav class="mobile-menu">
           <div class="logo item">
-            <span class="logo__stay">Muscle</span>
-            <span class="logo__world">Gram</span>
+            <span class="logo__muscle">Muscle</span>
+            <span class="logo__gram">Gram</span>
           </div>
           <div class = "mobile-menu__search">
             <% if user_signed_in? %>

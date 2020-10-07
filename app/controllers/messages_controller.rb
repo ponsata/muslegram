@@ -6,25 +6,20 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all.includes(:user, :youtube)
+
   end
 
-  # GET /messages/1
-  # GET /messages/1.json
   def show
     
   end
 
-  # GET /messages/new
+
   def new 
     @youtube_id = params[:youtube_id]
     @video_id = params[:video_id]
     @channel_title = params[:channel_title]
     @title = params[:title]
     @message = Message.new
-  end
-
-  def edit
-
   end
 
   def create
@@ -35,14 +30,25 @@ class MessagesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @message = Message.find(params[:id])
+  end
+
   def update
- 
+   if @message.update(message_params)
+      redirect_to messages_path
+    else
+      redirect_to edit_message_path
+    end
   end
 
   def destroy
-    @message.destroy
-  
-    
+    if @message.destroy 
+      redirect_to messages_path
+    else 
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

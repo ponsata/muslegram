@@ -1,21 +1,30 @@
-<h1>Editing Message</h1>
-
-<%= form_with(model: @message, url: youtube_messages_path ,local: true) do |form| %>
-  <% if message.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-      <div><iframe width="356" height="200" src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <ul>
-      <% message.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div id="content">
+  <div id= "main-content">
+    <div class="messages">
+      <h1 class="messages__title">Let's Share!!</h1>
+      <div class="messages__video">
+        <iframe  src="https://www.youtube.com/embed/<%= @message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="messages__youtube-title sub-title"> 
+        title:<%= @message.youtube.title %>
+      </div> 
+      <%= form_with(model: @message, url: message_path(youtube_id: @message.youtube.id), local: true) do |f| %>
+        <div class="contact-form row">
+           <div class="form-field col x-50">
+              <%= f.text_field :title, type: 'text', class: 'input-text js-input'%> 
+              <%= f.label :title, class: "label" %>
+           </div>
+           <div class="form-field col x-100">
+             <%= f.text_area :explanation,type: 'text', class: 'input-text js-input'%>
+             <%= f.label :explanation, class: "label" %>
+           </div>
+           <div class="form-field col x-100 align-center">
+              <%= f.submit 'Share', class:"submit-btn"%>
+           </div>
+           <%= link_to '一覧に戻る', messages_path %>
+        </div>
+      <% end %>    
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
   </div>
-<% end %>
-<%= link_to 'Show', @message %> |
-<%= link_to 'Back', messages_path %>
+</div>
+
