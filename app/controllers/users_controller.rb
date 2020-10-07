@@ -2,8 +2,8 @@ class UsersController < ApplicationController
 before_action :authenticate_user!, only: [:show, :edit, :update] 
 
   def edit
-    user = User.find(params[:id])
-    @image = user.image
+    @user = User.find(params[:id])
+    
   end
   
   def update
@@ -23,7 +23,7 @@ before_action :authenticate_user!, only: [:show, :edit, :update]
   private
   
   def user_params
-    params.require(:user).permit(:id, :nickname, :email, :image)
+    params.require(:user).permit(:id, :nickname, :email, :image, :profile)
   end
   
 end

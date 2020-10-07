@@ -7,8 +7,8 @@
       <div class="acount-page__inner clearfix">
         <div class="acount-page__inner__left acount-page__header">
           <h2 class="main-title">Log In</h2>
-          <div class= "sub-title">登録済みのユーザーでログインしてください </div>
-          <%= render "devise/shared/links" %>
+          <span class= "sub-title">登録済みのユーザーでログインしてください </span>
+          <span><%= render "devise/shared/links" %> </span>
         </div>  
         <div class="acount-page__inner__right user-form">  
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

@@ -3,12 +3,67 @@
 Stylesheet: 1280px以上のモニタで適用
 
 ******************************************************************/
-
-.popular {
+.youtubes {
   &__item {
-    flex-basis: 23%;
+      flex-basis: 25%;
+    }
+  &__box {
+    width: 303px;
+    height: 100%;
+     iframe {
+       width: 100%; 
+       height: 170px;
+     }
+  }
+  &__description {
+    height: 80px;
   }
 }
-.side {
-  display: block;
+
+
+.share {
+  
+  &__inner {
+  
+  }
+
+  &__box {
+  
+      margin-bottom: 50px;
+  }
+  &__video {
+    margin-right: 50px;
+    width: 500px;
+    height: 280px;
+    &  iframe {
+      
+    }
+  }
+  &__messages{
+
+    &__name {
+    
+    }
+    &__title {
+      
+    }
+    &__explanation {
+      height: 80px;
+      overflow: scroll;
+
+    }
+    &__btn {
+
+    }
+    &__channel {
+      width: 100%;
+      height: 24px;
+      overflow: hidden;
+    }
+  }
 }
+
+
+
+
+
