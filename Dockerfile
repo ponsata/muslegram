@@ -9,6 +9,7 @@ WORKDIR /myapp
 
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
+COPY config/database.yml /myapp/config/database.yml 
 
 RUN bundle install
 COPY . /myapp
