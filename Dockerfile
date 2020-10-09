@@ -13,3 +13,6 @@ COPY config/database.yml /myapp/config/database.yml
 
 RUN bundle install
 COPY . /myapp
+
+RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pids
