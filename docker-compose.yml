@@ -28,6 +28,8 @@ services:
       volumes:
           - .:/myapp
           - gem_data:/usr/local/bundle
+          - tmp-data:/myapp/tmp
+          - log-data:/myapp/log
       ports:
           - 3000:3000
       depends_on:
@@ -36,6 +38,17 @@ services:
       stdin_open: true
       environment:
           - EDITOR=vim
-
+  nginx:
+    build:
+      context: nginx/
+    volumes:
+        - gem_data:/usr/local/bundle
+        - tmp-data:/webapp/tmp
+    ports:
+        - 80:80
 volumes:
+  mysql_data: {}
   gem_data: {}
+  tmp-data: {}
+  log-data: {}
+
