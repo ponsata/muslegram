@@ -38,14 +38,7 @@ services:
       stdin_open: true
       environment:
           - EDITOR=vim
-  nginx:
-    build:
-      context: nginx/
-    volumes:
-        - gem_data:/myapp/pubic
-        - tmp-data:/myapp/tmp
-    ports:
-        - 80:80
+      command: bundle exec rails server -b 0.0.0.0
 volumes:
   mysql_data: 
   gem_data: 
