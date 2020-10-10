@@ -27,7 +27,7 @@ services:
       tty: true
       volumes:
           - .:/myapp
-          - gem_data:/usr/local/bundle
+          - gem_data:/myapp/pubic
           - tmp-data:/myapp/tmp
           - log-data:/myapp/log
       ports:
@@ -42,13 +42,13 @@ services:
     build:
       context: nginx/
     volumes:
-        - gem_data:/usr/local/bundle
-        - tmp-data:/webapp/tmp
+        - gem_data:/myapp/pubic
+        - tmp-data:/myapp/tmp
     ports:
         - 80:80
 volumes:
-  mysql_data: {}
-  gem_data: {}
-  tmp-data: {}
-  log-data: {}
+  mysql_data: 
+  gem_data: 
+  tmp-data: 
+  log-data: 
 
