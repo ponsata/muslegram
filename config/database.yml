@@ -59,7 +59,6 @@ test:
 production:
   <<: *default
   host: <%= Rails.application.credentials.rds[:host] %>
-  port: 3306
   database: <%= Rails.application.credentials.rds[:database] %>
   username: <%= Rails.application.credentials.rds[:username] %>
   password: <%= Rails.application.credentials.rds[:password] %>
