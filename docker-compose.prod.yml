@@ -38,7 +38,6 @@ services:
       stdin_open: true
       environment:
           - EDITOR=vim
-      command: bundle exec rails server -b 0.0.0.0
   nginx:
     build:
       context: nginx/
