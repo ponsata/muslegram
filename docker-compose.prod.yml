@@ -19,7 +19,7 @@ services:
          #- ./docker/db/mysql_init:/docker-entrypoint-initdb.d
         
      ports:
-        - "4306:3306"
+        - "3306:3306"
   prod:
       build: .
       command: bundle exec puma -C config/puma.rb -E production -D
