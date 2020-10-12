@@ -1,16 +1,25 @@
 # Project Title 
   MuscleGram/ Video Sharing Service
 ## Project Overview 
-  youtube動画共有サービス
+  Youtube動画共有サービス
 ## Motivation
   動画共有サービスです。主にフィットネスに興味ある方向けにおすすめの動画をユーザー間で共有していただくサービスになっています。
+## why? 
+  私は、ボディメイク・フィットネスに興味があります。そのような中、筋トレに興味を持つ友人が増えたことがきっかけで動画で筋トレを効率よく学べるサイトを作ろうと考えました。
+  Youtubeは、現代の学べるプラットフォームであると考えているので、それを生かした付加価値を乗っけられるようなポートフォリオサイトを作りたいと思いました。
+  デザインや機能等はあえてシンプルにして、誰でも手取り早く使えるにしております。　
+
 ## Production environment 
   [Musclegram/サイトURL](http://musclegram.online/)
 ## Screenshots 
  ![32a3495364dff358bdf08bb933a073d5](https://user-images.githubusercontent.com/65805662/95764116-fc515000-0cea-11eb-8951-5ff4b41692f5.jpg)
+
  ![1e9e610936db3bdb5710739265d7a2c8](https://user-images.githubusercontent.com/65805662/95764130-feb3aa00-0cea-11eb-853d-a169541fb743.jpg)
+
  ![bb695b8ade237e201be4687b335a54c9](https://user-images.githubusercontent.com/65805662/95764147-02473100-0ceb-11eb-9341-707e6d1abdb8.jpg)
+
  ![dad63671940a179a52cb5fd7d59cbb3f](https://user-images.githubusercontent.com/65805662/95764151-0410f480-0ceb-11eb-8b9d-3f7854f656c8.jpg)
+ 
 ## Development environment Technology used 
 <img width="973" alt="b6324ded8d57822aea9a4684193351ab" src="https://user-images.githubusercontent.com/65805662/95767262-74ba1000-0cef-11eb-9a98-2d5610578126.png">
 
