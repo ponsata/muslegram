@@ -7,11 +7,10 @@
 ## Production environment 
   [Musclegram/サイトURL](http://musclegram.online/)
 ## Screenshots 
- ![画像](32a3495364dff358bdf08bb933a073d5.jpg)
- ![画像](1e9e610936db3bdb5710739265d7a2c8.jpg)
- ![画像](bb695b8ade237e201be4687b335a54c9.jpg)
- ![画像](dad63671940a179a52cb5fd7d59cbb3f.jpg)
-
+ ![32a3495364dff358bdf08bb933a073d5](https://user-images.githubusercontent.com/65805662/95764116-fc515000-0cea-11eb-8951-5ff4b41692f5.jpg)
+ ![1e9e610936db3bdb5710739265d7a2c8](https://user-images.githubusercontent.com/65805662/95764130-feb3aa00-0cea-11eb-853d-a169541fb743.jpg)
+ ![bb695b8ade237e201be4687b335a54c9](https://user-images.githubusercontent.com/65805662/95764147-02473100-0ceb-11eb-9341-707e6d1abdb8.jpg)
+ ![dad63671940a179a52cb5fd7d59cbb3f](https://user-images.githubusercontent.com/65805662/95764151-0410f480-0ceb-11eb-8b9d-3f7854f656c8.jpg)
 ## Development environment Technology used 
 - MySQL5.7
 - nginx,puma
