@@ -22,7 +22,7 @@ services:
         - "3306:3306"
   prod:
       build: .
-      command: bundle exec puma -C config/puma.rb -E production -D
+      command: bundle exec puma -C config/puma.rb -e production 
       stdin_open: true
       tty: true
       volumes:
