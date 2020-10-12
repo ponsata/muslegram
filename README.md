@@ -13,6 +13,7 @@
  ![dad63671940a179a52cb5fd7d59cbb3f](https://user-images.githubusercontent.com/65805662/95764151-0410f480-0ceb-11eb-8b9d-3f7854f656c8.jpg)
 ## Development environment Technology used 
 <img width="973" alt="b6324ded8d57822aea9a4684193351ab" src="https://user-images.githubusercontent.com/65805662/95767262-74ba1000-0cef-11eb-9a98-2d5610578126.png">
+
 - MySQL5.7
 - nginx,puma
 - Javascript・jQuery
