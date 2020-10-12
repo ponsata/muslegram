@@ -7,10 +7,10 @@
 ## Production environment 
   [Musclegram/サイトURL](http://musclegram.online/)
 ## Screenshots 
- ![](32a3495364dff358bdf08bb933a073d5.jpg)
- ![](1e9e610936db3bdb5710739265d7a2c8.jpg)
- ![](bb695b8ade237e201be4687b335a54c9.jpg)
- ![](dad63671940a179a52cb5fd7d59cbb3f.jpg)
+ ![画像](32a3495364dff358bdf08bb933a073d5.jpg)
+ ![画像](1e9e610936db3bdb5710739265d7a2c8.jpg)
+ ![画像](bb695b8ade237e201be4687b335a54c9.jpg)
+ ![画像](dad63671940a179a52cb5fd7d59cbb3f.jpg)
 
 ## Development environment Technology used 
 - MySQL5.7
@@ -24,23 +24,23 @@
 - VSCode, Vim
 
 ## List of Functions
-- ◆ユーザー機能3種類・deviseを使用
+◆ユーザー機能3種類・deviseを使用
 - 新規登録、ログイン、ログアウト
 - マイページ、登録情報編集
 
-- ◆Youtube 動画視聴
+◆Youtube 動画視聴
 - youtube Video API使用
 - 動画一覧機能
 
-- ◆検索機能
+◆検索機能
 - youtube Data API 使用 
 - 検索フォームからワードを入力するとyoutubeの動画を検索することができます。
 
-- ◆投稿機能
+◆投稿機能
 - 一覧表示、記事詳細表示、投稿、編集、削除機能
 - 画像のアップロードはrefile,cocoonを使用
 
-- ◆ブックマーク機能 いいね機能
+◆ブックマーク機能 いいね機能
 - ブックマーク作成と削除
 - ユーザマイページにてプレイリスト登録
 
