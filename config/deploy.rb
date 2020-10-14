@@ -15,7 +15,7 @@ set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/desktop/aws-and-infra-ssh-key.pem>'] 
+                  keys: ['~/.ssh/aws-and-infra-ssh-key.pem>'] 
 
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails puma pumactl}
