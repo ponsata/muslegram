@@ -45,7 +45,8 @@ services:
         - gem_data:/myapp/pubic
         - tmp-data:/myapp/tmp
     ports:
-        - 80:80
+        - "80:80"
+        - "443:443"
     depends_on: 
         - prod
 volumes:
