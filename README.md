@@ -5,9 +5,10 @@
 ## Motivation
   動画共有サービスです。主にフィットネスに興味ある方向けにおすすめの動画をユーザー間で共有していただくサービスになっています。
 ## why? 
-  私は、ボディメイク・フィットネスに興味があります。そのような中、筋トレに興味を持つ友人が増えたことがきっかけで動画で筋トレを効率よく学べるサイトを作ろうと考えました。
+  私は、ボディメイク・フィットネスに興味があります。
+  そのような中、筋トレに興味を持つ友人が増えたことがきっかけで動画で筋トレを効率よく学べるサイトを作ろうと考えました。
   Youtubeは、現代の学べるプラットフォームであると考えているので、それを生かした付加価値を乗っけられるようなポートフォリオサイトを作りたいと思いました。
-  デザインや機能等はあえてシンプルにして、誰でも手取り早く使えるにしております。　
+  デザインや機能等はあえてシンプルにして、誰でも手取り早く使えるにしております。
 
 ## Production environment 
   [Musclegram/サイトURL](http://musclegram.online/)
@@ -28,7 +29,7 @@
 - Javascript・jQuery
 - Ruby 2.5.1, Rails 5.2.4
 - Docker,Docker-compose（開発環境）
-- AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3, Docker）
+- AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3, Docker ACM）
 - Mac Catalina(10.15.5)
 - Amazon Linux 2
 - VSCode, Vim
@@ -54,6 +55,7 @@
 - ユーザマイページにてプレイリスト登録
 
 ◆レスポンシブデザイン対応 ※iphone5 SE　非対応
+◆ページローダー機能
 
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.online/)
@@ -62,4 +64,3 @@
 - ユーザーフォロー機能とグループチャット機能
 - 非同期通信(Ajax)
 - テスト環境の実装Rspec・Circle ci 
-- SSL認証
