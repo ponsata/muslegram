@@ -4,16 +4,6 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <div class ="userbox__inner">
-<<<<<<< Updated upstream
-        <div class= "userbox__top">
-          <div class= "userbox__top__left">
-            <!-- アイコン表示部分-->
-            <div class= "userbox__top__left__icon">
-              <% if @user.image.present? %>  
-                <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
-              <% end %>  
-            </div>  
-=======
         <div class= "userbox__left">
           <div class= "userbox__left__icon">
             <% if @user.image.present? %>  
@@ -36,7 +26,6 @@
           </div>
           <div class="userbox__messages">
             投稿数:&nbsp;<%= @user.messages.count%>
->>>>>>> Stashed changes
           </div>
         </div>
       </div>
