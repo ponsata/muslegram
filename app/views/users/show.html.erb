@@ -4,6 +4,7 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <div class ="userbox__inner">
+<<<<<<< Updated upstream
         <div class= "userbox__top">
           <div class= "userbox__top__left">
             <!-- アイコン表示部分-->
@@ -12,6 +13,30 @@
                 <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
               <% end %>  
             </div>  
+=======
+        <div class= "userbox__left">
+          <div class= "userbox__left__icon">
+            <% if @user.image.present? %>  
+              <%= image_tag @user.image.url, width: '100%', class: "icon-image" %>
+            <% else %>
+              <%= image_tag asset_path("account-icon/account-icon.jpeg"), width: '100%', class: "icon-image" %>
+            <% end %>  
+          </div>  
+        </div>
+        <section class="userbox__right">
+          <div class="userbox__header">
+            <h2 class="userbox__name main_title">
+              <%= @user.nickname%>
+            </h2>
+            <% if @user.id == current_user.id %>
+              <div class="userbox__edit">
+                <i class="far fa-edit"><%= link_to "プロフィールを編集", edit_user_path, method: :get %></i>
+              </div>
+            <% end %>
+          </div>
+          <div class="userbox__messages">
+            投稿数:&nbsp;<%= @user.messages.count%>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>

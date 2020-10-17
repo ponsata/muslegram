@@ -17,12 +17,20 @@
                       <%= f.file_field :image, class: "acount-page__inner__right__icon__input__btn" %>
                     </div>
                   <% else %>
+<<<<<<< Updated upstream
                     <span class="acount-page__inner__right__icon__input__noimage"></span>
                     <div class= "acount-page__inner__right__icon__input__image2">
                       <%= f.file_field :image, class: "acount-page__inner__right__icon__input__btn" %>
                     </div>
+=======
+                    <%= image_tag asset_path("account-icon/account-icon.jpeg"), id: :img_prev %>
+                    
+>>>>>>> Stashed changes
                   <% end %>
                 </div>
+              </div>
+              <div class = "sub-title">
+                画像を追加
               </div>
             </div>
             <div class="field">
