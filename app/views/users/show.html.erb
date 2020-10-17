@@ -27,10 +27,62 @@
           <div class="userbox__messages">
             投稿数:&nbsp;<%= @user.messages.count%>
           </div>
+            <% end %>  
+          </div>  
         </div>
+        <section class="userbox__right">
+          <div class="userbox__header">
+            <h2 class="userbox__name main_title">
+              <%= @user.nickname%>
+            </h2>
+            <% if @user.id == current_user.id %>
+              <div class="userbox__edit">
+                <i class="far fa-edit"><%= link_to "プロフィールを編集", edit_user_path, method: :get %></i>
+              </div>
+            <% end %>
+          </div>
+          <div class="userbox__messages">
+            投稿数:&nbsp;<%= @user.messages.count%>
+          </div>
+          <div class="userbox__profile">
+            自己紹介: <br> <span><%= @user.profile%></span>
+          </div>
+        </section>
       </div>
-      <div class ="userbox__bottom">
-        <%= link_to "編集", edit_user_path, method: :get %>
+    </div>
+    <div class="youtubes">
+      <% if @user.id == current_user.id %>
+        <div>
+          <h2 class="main-title tween-animate-title">My Playlists</h2>
+        </div>
+      <% else %>
+        <div>
+          <h2 class="main-title tween-animate-title">Playlists</h2>
+        </div>
+      <% end %>
+      <div class="youtubes__inner">
+        <% @playlist_youtubes.each do |youtube| %>
+          <% @youtube = youtube%> 
+          <div class="youtubes__item appear up">
+            <div class= "youtubes__box item">
+              <iframe src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="youtubes__channel">
+                <%= @youtube.channel_title %> 
+              </div>
+              <div class="youtubes__description sub-title">
+                <%= @youtube.description%>
+              </div>
+              <button class="youtubes__playlist">
+                <% if youtube.playlist_by?(current_user) %>
+                  <%= link_to "Remove",  youtube_playlists_path(youtube), method: :delete %>
+                <% else %>
+                  <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
+                <% end %>
+                <i class="far fa-heart"><%= @youtube.playlists.count %></i>
+              </button>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

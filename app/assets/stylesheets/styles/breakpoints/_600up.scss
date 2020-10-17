@@ -3,6 +3,25 @@
 Stylesheet: 600px以上のタブレットやモニタで適用
 
 ******************************************************************/
+.font-sm {
+    font-size: 13px;
+  }
+  .font-md {
+    font-size: 13px;
+  }
+  .font-lr {
+    font-size: 17px;
+  }
+  .font-lg {
+    font-size: 25px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-lg {
+    padding-bottom: 150px !important;
+  }
+
 .flex {
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,10 +32,19 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         display: block;
     }
 }
+
+.mobile-menu {
+
+  &__search{
+    display: none;
+  }
+
+}
+
+
 .acount-page {
     &__inner {
         justify-content: space-between;
-        width: 980px;
         border: 1px solid #ddd;
         border-radius: 5px;
         &__left {
@@ -31,20 +59,110 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     }
 }
 .youtubes {
-    &__item {
-        flex-basis: 25%;
-    }
-}
-
-.popular {
-    &__container {
-        justify-content: space-between;
+    &__box {
+       
+       iframe {
+              
+      }
     }
 
-    &__item {
-        flex-basis: 47%;
-    }
 }
+
+
+.messages {
+    
+   &__video {
+      width: 500px;
+      height: 280px;
+    
+      iframe {
+        
+      }
+   }
+   &__youtube-title {
+     width: 500px;
+   }
+
+}
+ 
+
+ .share {
+  
+  &__inner {
+  
+  }
+
+  &__box {
+    
+    margin-bottom: 50px;
+    
+  }
+  &__video {
+    margin-right: 15px;
+    width: 350px;
+    height: 200px;
+    &  iframe {
+      
+    }
+  }
+  &__messages{
+    width: 285px;
+    &__name {
+     
+    }
+    &__title {
+      
+    }
+    &__explanation {
+     
+      height: 80px;
+      overflow: scroll;
+
+    }
+    &__btn {
+
+    }
+    &__channel {
+      width: 100%;
+      height: 24px;
+      overflow: hidden;
+    }
+  }
+}
+
+
+.userbox {
+  margin: 0 auto;
+  max-width: 650px;
+  padding-top: $navHeight;
+  border-bottom: 1px solid;
+
+  &__inner {
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+  &__left {
+    &__icon {
+    
+      & > img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__name {
+    text-align: none;
+  }
+  &__right {
+    width:300px;
+    margin: 0;
+  }
+
+
+}
+
+
+
 
 
 .footer {

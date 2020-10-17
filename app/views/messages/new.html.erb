@@ -1,18 +1,30 @@
-<h1>New Message</h1>
-
-<%= form_with(model: @message, url: messages_path(youtube_id: @youtube_id), local: true) do |f| %>
-  <div> 
-    <%= @title %>
-  </div> 
-  <div>
-    <iframe width="356" height="200" src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-    </iframe>
+<div id="content">
+  <div id= "main-content">
+    <div class="messages">
+      <h1 class="messages__title">Let's Share!!</h1>
+      <div class="messages__video">
+        <iframe  src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="messages__youtube-title sub-title"> 
+        title:<%= @title %>
+      </div> 
+      <%= form_with(model: @message, url: messages_path(youtube_id: @youtube_id), local: true) do |f| %>
+        <div class="contact-form row">
+          <div class="form-field col x-50">
+             <%= f.text_field :title, type: 'text', class: 'input-text js-input'%> 
+             <%= f.label :title, class: "label" %>
+          </div>
+          <div class="form-field col x-100">
+            <%= f.text_area :explanation,type: 'text', class: 'input-text js-input'%>
+            <%= f.label :explanation, class: "label" %>
+          </div>
+          <div class="form-field col x-100 align-center">
+             <%= f.submit 'Share', class:"submit-btn"%>
+          </div>
+          <%= link_to 'ホームに戻る', root_path %>
+        </div>
+      <% end %>    
+    </div>
   </div>
-  <%= f.text_field :title, type: 'text'%> <br>
-  <%= f.text_area :explanation, :placeholder =>
-    '動画の感想、みんなに共有したいことを書いてみよう'%> <br>
-  
-  <%= f.submit '投稿する'%>
+</div>
 
-<% end %>
-<%= link_to 'Back', messages_path %>

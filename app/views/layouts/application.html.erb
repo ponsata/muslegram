@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>muslegram</title>
+    <title>musclegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -19,21 +19,24 @@
         <header class="header">
           <div class="header__inner appear up">
             <div class="logo item">
-              <span class="logo__stay"><%= link_to "Musle", root_path, method: :get %></span>
-              <span class="logo__world"><%= link_to "Gram", root_path, method: :get %></span>
+              <span class="logo__muscle"><%= link_to "Muscle", root_path, method: :get %></span>
+              <span class="logo__gram"><%= link_to "Gram", root_path, method: :get %></span>
             </div>
             <div class = "header__search">
-              <%= form_tag(find_videos_youtubes_path, method: :get) do %>
-                <div class="header__search__box">
-                  <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
-                  <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
-                    <i class="fa fa-search"></i>
+               <% if user_signed_in? %>
+                  <%= form_tag(find_videos_youtubes_path, method: :get) do %>
+                    <div class="mobile-menu__search__box">
+                      <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
+                        <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
+                          <i class="fa fa-search"></i>
+                        <% end %>
+                    </div>  
                   <% end %>
-                </div>  
               <% end %>
             </div>  
             <nav class="header__nav">
               <ul class="header__ul">
+                <li class="header__li item"><%= link_to "ホーム", root_path, method: :get %></li>
                 <li class="header__li item"><%= link_to "投稿みる", messages_path, method: :get %></li>
                 <% if user_signed_in? %>
                   <li class="header__li item"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
@@ -56,8 +59,8 @@
         
         <footer class='footer appear up '>
           <div class="logo item">
-            <span class="logo__stay">Musle</span>
-            <span class="logo__world">Gram</span>
+            <span class="logo__muscle">Muscle</span>
+            <span class="logo__gram">Gram</span>
           </div>
           <nav class="footer__nav">
             <ul class='footer__ul'>
@@ -90,20 +93,25 @@
       </div>
       <nav class="mobile-menu">
           <div class="logo item">
-            <span class="logo__stay">Musle</span>
-            <span class="logo__world">Gram</span>
+            <span class="logo__muscle">Muscle</span>
+            <span class="logo__gram">Gram</span>
           </div>
           <div class = "mobile-menu__search">
-            <%= form_tag(find_videos_youtubes_path, method: :get) do %>
-              <div class="mobile-menu__search__box">
-                <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
-                  <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
-                    <i class="fa fa-search"></i>
-                  <% end %>
-              </div>  
+            <% if user_signed_in? %>
+              <%= form_tag(find_videos_youtubes_path, method: :get) do %>
+                <div class="mobile-menu__search__box">
+                  <%= text_field_tag :search, "", placeholder:"何かお探しですか？",class: "header__search__word"%> 
+                    <%= button_tag :type => "submit", :class =>"header__search__submit" do %>
+                      <i class="fa fa-search"></i>
+                    <% end %>
+                </div>  
+              <% end %>
             <% end %>
           </div>  
           <ul class="mobile-menu__main">
+              <li class="mobile-menu__item">
+                <%= link_to "ホーム", root_path, class: "mobile-menu__link main-title", method: :get %>
+              </li>
               <li class="mobile-menu__item">
                 <%= link_to "投稿みる", messages_path, class: "mobile-menu__link main-title", method: :get %>
               </li>

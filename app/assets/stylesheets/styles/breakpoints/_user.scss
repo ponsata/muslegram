@@ -103,22 +103,7 @@ main {
           border: 1px solid $cBgGray;
           overflow: hidden;
           position: relative;
-          &__image {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-          &__noimage {
-            position: absolute;
-            top: 0;
-            left: 0;
 
-          }
-          &__image2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
           &__btn {
             position: absolute;
             top: 0;
@@ -190,14 +175,18 @@ main {
         padding: 10px;
         letter-spacing: 1px;
       }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        letter-spacing: 1px;
+      } 
     }
   }
 
   .btn {
     display: inline-block;
     height: 50px;
-    padding: 0 30px;
-    line-height: 50px;
+  
     letter-spacing: 1px;
     text-align: center;
     border: none;
@@ -250,31 +239,33 @@ main {
 
 
 .userbox {
-  @extend .content-width;
-  @extend .mb-lg;
+  margin: 0 auto;
+  max-width: 650px;
   padding-top: $navHeight;
+  border-bottom: 1px solid;
+
   &__inner {
     @extend .flex;
-    justify-content: space-between;
+    margin-bottom: 25px;
   }
-
-  &__title {
-    @extend .font-lr;
-    @extend .mb-sm;
+  &__left {
+    &__icon {
+      margin-top: 10px;
+      & > img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
   }
-  &__description {
-    width: 303px;
-    height: 100px;
-    overflow: scroll;
+  &__right {
+    margin: 0 auto;
   }
-  &__btn {
-    text-align: center;
-    flex-basis: 100%;
-  }
-  &_box {
-    &  iframe {
-      width: 303px;
-      height: 170px;
+  &__edit {
+    & > i {
+      & > a {
+        text-decoration: none;
+        color: $cSubTitle;
+      }
     }
   }
   &__channel {
@@ -282,5 +273,4 @@ main {
     height: 24px;
     overflow: hidden;
   }
-}  
-
+}
