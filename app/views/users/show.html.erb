@@ -27,23 +27,6 @@
           <div class="userbox__messages">
             投稿数:&nbsp;<%= @user.messages.count%>
           </div>
-            <% end %>  
-          </div>  
-        </div>
-        <section class="userbox__right">
-          <div class="userbox__header">
-            <h2 class="userbox__name main_title">
-              <%= @user.nickname%>
-            </h2>
-            <% if @user.id == current_user.id %>
-              <div class="userbox__edit">
-                <i class="far fa-edit"><%= link_to "プロフィールを編集", edit_user_path, method: :get %></i>
-              </div>
-            <% end %>
-          </div>
-          <div class="userbox__messages">
-            投稿数:&nbsp;<%= @user.messages.count%>
-          </div>
           <div class="userbox__profile">
             自己紹介: <br> <span><%= @user.profile%></span>
           </div>
