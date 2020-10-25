@@ -1,10 +1,8 @@
 FactoryBot.define do
   factory :youtube do
-    email { Faker::Internet.free_email }
-    password = Faker::Internet.password(min_length: 8)
-    password {password}
-    password_confirmation {password}
-    image {Faker::Avatar.image(slug: "my-own-slug") }#=> "https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+    channel_id {'UCdSPo9Iefw1REMBTPqm7DwQ'}
+    channel_title {Faker::Lorem.words(number: 4, supplemental: true)}
+    title {Faker::Lorem.words}
     video_id {'cEs5451Ca78'}
     description {Faker::Lorem.sentence}
   end
