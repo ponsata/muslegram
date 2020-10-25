@@ -27,7 +27,9 @@
 - MySQL5.7
 - nginx,puma
 - Javascript・jQuery
-- Ruby 2.5.1, Rails 5.2.4
+- Ruby 2.5.1
+- Rails 5.2.4
+- Rspec テスト環境の実装
 - Docker,Docker-compose（開発環境）
 - AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3, Docker ACM）
 - Mac Catalina(10.15.5)
@@ -63,4 +65,4 @@
 - 全体的デザインの見直し
 - ユーザーフォロー機能とグループチャット機能
 - 非同期通信(Ajax)
-- テスト環境の実装Rspec・Circle ci 
+- Circle ci 実装
