@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Playlist, type: :model do
 
   before do
-    @playlist = FactoryBot.build(:playlist)
+    @playlist = FactoryBot.create(:playlist)
   end
   describe 'いいねが登録できているか' do
     context '登録できている場合' do
@@ -14,12 +14,12 @@ RSpec.describe Playlist, type: :model do
 
     context '登録できない場合' do
       it "user_idがnilの場合、無効であること" do
-        @playlist.user_id = nil
+        @playlist.user = nil
         @playlist.valid?
         expect(@playlist.errors.full_messages).to include("user_id can't be blank")
       end
       it "youtube_idがnilの場合、無効であること" do
-        @playlist.youtube_id = nil
+        @playlist.youtube = nil
         @playlist.valid?
         expect(@playlist.errors.full_messages).to include("youtube_id can't be blank")
       end
