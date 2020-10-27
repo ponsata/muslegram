@@ -13,12 +13,12 @@ RSpec.describe Message, type: :model do
     
     context 'messageを保存できない場合' do
       it 'explanationが空の場合保存できないこと' do
-        @message.explanation = ''
+        @message.explanation = nil
         @message.valid?
         expect(@message.errors.full_messages).to include("explanation can't be blank")
       end
       it 'titleが空の場合保存できないこと' do
-        @message.title = ''
+        @message.title = nil
         @message.valid?
         expect(@message.errors.full_messages).to include("title can't be blank")
       end
