@@ -12,7 +12,14 @@ class Users::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
-
+  def new_guest
+    user = User.find(1)
+    user = User.find_or_create_by!(email: 'guest@example.com', nickname: 'ゲスト') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
   # DELETE /resource/sign_out
   def destroy
     redirect_to root_path

@@ -38,6 +38,7 @@
               <ul class="header__ul">
                 <li class="header__li item"><%= link_to "ホーム", root_path, method: :get %></li>
                 <li class="header__li item"><%= link_to "投稿みる", messages_path, method: :get %></li>
+                <li class="header__li item"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
                 <% if user_signed_in? %>
                   <li class="header__li item"><%= link_to "マイページ", user_path(current_user.id), method: :get %></li>
                   <li class="header__li item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
@@ -114,6 +115,9 @@
               </li>
               <li class="mobile-menu__item">
                 <%= link_to "投稿みる", messages_path, class: "mobile-menu__link main-title", method: :get %>
+              </li>
+              <li class="mobile-menu__item">
+                <%= link_to 'ゲストログイン', users_guest_sign_in_path, class: "mobile-menu__link main-title", method: :post %>
               </li>
               <% if user_signed_in? %>
                 <li class="mobile-menu__item">
