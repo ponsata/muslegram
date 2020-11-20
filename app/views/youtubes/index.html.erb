@@ -1,8 +1,8 @@
 <div id="content">
   <div id= "main-content">
-    <div class="youtubes">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="youtubes appear up">
+      <p class="notice item"><%= notice %></p>
+      <p class="alert item "><%= alert %></p>
       <div>
         <h2 class="main-title tween-animate-title">Find Your Videos</h2>
       </div>
@@ -19,17 +19,18 @@
                 <%= @youtube.description%>
               </div>
               <% if user_signed_in? %>
-                <button class="youtubes__post btn filled item">
-                  <%= link_to "投稿する", new_message_path(youtube_id: @youtube.id,  video_id: @youtube.video_id, channel_title: @youtube.channel_title, title: @youtube.title), method: :get %>
-                </button>
-                <button class="youtubes__playlist">
-                  <% if youtube.playlist_by?(current_user) %>
-                    <%= link_to "Remove", youtube_playlists_path(youtube), method: :delete %>
-                  <% else %>
-                    <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
-                  <% end %>
-                  <i class="far fa-heart"><%= youtube.playlists.count %></i>
-                </button>
+                <div class= "youtubes__btn">
+                  <div class="youtubes__btn__post item">
+                    <%= link_to "投稿", new_message_path(youtube_id: @youtube.id,  video_id: @youtube.video_id, channel_title: @youtube.channel_title, title: @youtube.title), method: :get %>
+                  </div>
+                  <div class="youtubes__btn__playlist item">
+                    <% if youtube.playlist_by?(current_user) %>
+                      <%= link_to "Remove", youtube_playlists_path(youtube), method: :delete %>
+                    <% else %>
+                      <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
             </div>
           </div>

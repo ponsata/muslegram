@@ -1,4 +1,3 @@
-@import 'loader';
 @import 'styles/modules/variables';
 @import 'styles/modules/mixin';
 @import 'styles/modules/appear';
@@ -38,6 +37,4 @@
 @media print {
   @import "styles/breakpoints/2x";
 }
-
-
 

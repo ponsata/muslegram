@@ -40,12 +40,15 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
 
 }
+#content {
+  background-size: cover;
+}
 
 
 .acount-page {
     &__inner {
         justify-content: space-between;
-        border: 1px solid #ddd;
+        border: 10px solid #F5F5DC;
         border-radius: 5px;
         &__left {
             flex-basis: 50%;
@@ -57,15 +60,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
             flex-basis: 45%;
         }
     }
-}
-.youtubes {
-    &__box {
-       
-       iframe {
-              
-      }
-    }
-
 }
 
 
@@ -89,7 +83,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
  .share {
   
   &__inner {
-  
+    height: 774px;
   }
 
   &__box {
@@ -111,7 +105,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
      
     }
     &__title {
-      
+      font-size: 36px;
     }
     &__explanation {
      
@@ -135,8 +129,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   margin: 0 auto;
   max-width: 650px;
   padding-top: $navHeight;
-  border-bottom: 1px solid;
-
   &__inner {
     justify-content: space-between;
     margin-bottom: 35px;

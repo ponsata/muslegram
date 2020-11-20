@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Helpers
 
-body {
-   font-family: "Kameron", "Noto Sans JP", sans-serif;
- }
  img {
    max-width: 100%;
    vertical-align: bottom;
@@ -56,24 +53,7 @@ body {
  .purple {
    color: $cRed;
  }
- 
- #main-content {
-   position: relative;
-   z-index: 0;
- }
- 
- main {
-   position: relative;
-   z-index: -1;
- }
- 
- #container {
-   background-color: $cWhite;
-   position: relative;
-   z-index: 10;
-   transition: transform 0.5s, box-shadow 0.5s;
- }
- 
+
 
 @mixin clearfix {
    &:after {
@@ -107,16 +87,18 @@ body {
    max-width: 650px;
    margin: 0 auto;
    position: relative;
-   top: 50%;
+   background-color: #222222;
+   border-radius: 5%;
    @extend .content-width;
-   @extend .mb-lg;
-   padding-top: $navHeight;
+   &__inner {
+     margin: 100px 0;
+   }
   &__title {
      text-align: center;
      text-transform: uppercase;
      letter-spacing: 3px;
-     font-size: 36px;
-     line-height: 48px;
+     color: #F5F5DC;
+     padding-top: 24px;
   }
   &__video {
     width: 320px;
@@ -140,17 +122,22 @@ body {
    .form-field {
       position: relative;
       margin: 32px 0;
+      & > a {
+        text-decoration: none;
+        color: $cSubTitle;
+      }
    }
    .input-text {
       display: block;
       width: 100%;
       height: 36px;
       border-width: 0 0 2px 0;
-      border-color: #000;
+      border-color: #F5F5DC;
       font-size: 18px;
       line-height: 26px;
       font-weight: 400;
-      
+      background-color: #222222;
+      color: #F5F5DC;
       &:focus {
          outline: none;
       }
@@ -169,7 +156,7 @@ body {
       font-size: 18px;
       line-height: 26px;
       font-weight: 400;
-      color: #888;
+      color: #F5F5DC;
       cursor: text;
       transition: transform .2s ease-in-out;
    }
@@ -186,17 +173,15 @@ body {
       border: none;
       cursor: pointer;
    }
-   & > a {
-     text-decoration: none;
-     color: $cSubTitle;
-   }
+   
 }
 
 .share {
   @extend .content-width;
-  @extend .mb-lg;
   padding-top: $navHeight;
   &__inner {
+    height: 516px;
+    overflow: scroll;
     @extend .flex;
     justify-content: space-between;
   }
@@ -245,3 +230,80 @@ body {
   }
 }
 
+.user {
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+  padding-bottom: 8px;v
+  &.user__info {
+    padding-bottom: 8px;
+  }
+  &__icon {
+    float: left;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+  }
+  &__pro {
+    /* float: left; */
+    padding-top: 15px;
+    font-size: 20px;
+    color: #333;
+  }
+}
+
+.posts_feed {
+  margin: 30px 0 15px 0;
+  padding: 0 15px;
+  padding-bottom: 10px;
+  background-color: #fdfdfd;
+  border-radius: 5px;
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+}
+.posts li {
+  overflow: hidden;
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+  & > .user-icon{
+    float: left;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+  & > .youtube-icon {
+    float: right;
+  }
+  & > a {
+    display: block;
+    margin-top: 8px;
+    color: #333;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    & > h2 {
+      margin: 15px 0;
+      color: #333;
+      font-size: 20px;
+      text-align: left;
+      text-decoration: none;
+    }
+  }
+  & > .timestamp {
+    color: #808080;
+    display: block;
+    margin-left: 60px;
+    &__left {
+
+    }
+    &__right {
+      float: right;
+      margin-right: 15px;
+    }
+  }
+}

@@ -3,9 +3,7 @@
 Stylesheet: ベーススタイル
 
 ******************************************************************/
-body {
-  font-family: "Kameron", "Noto Sans JP", sans-serif;
-}
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -44,6 +42,7 @@ img {
   font-weight: 600;
   margin-bottom: 0;
   display: block;
+  color: $cSubTitle;
 }
 .sub-title {
   @extend .font-sm;
@@ -57,35 +56,32 @@ img {
   color: $cRed;
 }
 
-#main-content {
+#user-content {
+  margin-top: 100px;
+}
+
+#user-main-content {
   position: relative;
   z-index: 0;
 }
 
-main {
-  position: relative;
-  z-index: -1;
-}
-
-#container {
-  background-color: $cWhite;
-  position: relative;
-  z-index: 10;
-  transition: transform 0.5s, box-shadow 0.5s;
-}
 
 .acount-page {
   @extend .content-width;
   @extend .mb-lg;
   padding-top: $navHeight;
   &__inner {
-    margin: 60px auto;
+    background-color: #333333;
+    margin: 0 auto 60px ;
     padding: 60px;
     @extend .flex;
     &__left {
       
       & > span {
         display: block;
+        & > a {
+          background-color:  #F5F5DC;
+        }
     }
     }
     &__right{
@@ -137,7 +133,7 @@ main {
         display: block;
         width: 300px;
         margin-top: 5px;
-        border-bottom: 1px solid $cBlack;
+        border-bottom: 1px solid $cSubTitle;
       }
     }
 
@@ -163,7 +159,7 @@ main {
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-
+      color: #F5F5DC;
       i {
         font-size: 11px;
       }
@@ -174,19 +170,19 @@ main {
         width: 100%;
         padding: 10px;
         letter-spacing: 1px;
+        background-color: #F5F5DC;
       }
       textarea {
         width: 100%;
         padding: 10px;
         letter-spacing: 1px;
+        background-color: #F5F5DC;
       } 
     }
   }
 
   .btn {
     display: inline-block;
-    height: 50px;
-  
     letter-spacing: 1px;
     text-align: center;
     border: none;
@@ -196,11 +192,14 @@ main {
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: $cWhite;
-    background-color: $cBlack;
+    color: black;
+    background-color: #F5F5DC;
+    font-weight: bold;
+    font-size: 20px;
   }
 
   .field-label {
+    
     .field_with_errors {
       display: inline-block;
       color: #d65f4c;
@@ -209,6 +208,7 @@ main {
   }
 
   .field-input {
+    color: #F5F5DC;
     .field_with_errors {
       position: relative;
 
@@ -235,6 +235,7 @@ main {
   //画像を丸くする
   object-fit: cover;
   //タテヨコ比を変えないままトリミング
+  background-color: #F5F5DC;
 }
 
 
@@ -242,11 +243,14 @@ main {
   margin: 0 auto;
   max-width: 650px;
   padding-top: $navHeight;
-  border-bottom: 1px solid;
-
+  border-bottom: 1px solid #F5F5DC;
+  &__name {
+    color: $cSubTitle;
+  }
   &__inner {
     @extend .flex;
     margin-bottom: 25px;
+
   }
   &__left {
     &__icon {
@@ -262,6 +266,8 @@ main {
   }
   &__edit {
     & > i {
+      color: $cSubTitle;
+
       & > a {
         text-decoration: none;
         color: $cSubTitle;

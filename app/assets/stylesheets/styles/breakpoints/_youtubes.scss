@@ -8,6 +8,7 @@ Stylesheet: ベーススタイル
 ******************************************************************/
 body {
   font-family: "Kameron", "Noto Sans JP", sans-serif;
+  background-color: #003A43;
 }
 img {
   max-width: 100%;
@@ -47,6 +48,7 @@ img {
   font-weight: 600;
   margin-bottom: 0;
   display: block;
+  color: #F5F5DC;
 }
 .sub-title {
   @extend .font-sm;
@@ -60,9 +62,15 @@ img {
   color: $cRed;
 }
 
+#content {
+  margin-top: 100px;
+  background-image: image-url("bg1.jpg");
+  background-size: auto;
+}
 #main-content {
   position: relative;
   z-index: 0;
+  background: rgba(255,255,255,0.1);
 }
 
 main {
@@ -71,7 +79,6 @@ main {
 }
 
 #container {
-  background-color: $cWhite;
   position: relative;
   z-index: 10;
   transition: transform 0.5s, box-shadow 0.5s;
@@ -89,7 +96,7 @@ main {
   z-index: 100;
 
   &.triggered {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #003A43;
     box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
   }
   &__search {
@@ -97,7 +104,7 @@ main {
     &__box {
       box-sizing: border-box;
       position: relative;
-      border: 1px solid #999;
+      border: 1px solid $cSubTitle;
       display: block;
       padding: 3px 10px;
       border-radius: 20px;
@@ -108,6 +115,8 @@ main {
     &__word{
       border: none;
       height: 2.0em;
+      background-color: #003A43;
+      color: $cSubTitle;
     }
     &__word:focus{
       outline: 0;
@@ -140,9 +149,9 @@ main {
 
   &__li {
     margin-left: 20px;
-
+    
     & > a {
-      color: $cBlack;
+      color: $cSubTitle;
       text-decoration: none !important;
       text-transform: uppercase;
     }
@@ -161,23 +170,34 @@ main {
   }
 }
 
+.tween-animate-title{
+  margin: 0 0 15px 0; 
+}
 .youtubes {
   @extend .content-width;
-  @extend .mb-lg;
-  padding-top: $navHeight;
+  padding-top: 50px;
   &__inner {
+    overflow: scroll;
+    height: 774px;
+    @extend .flex;
+    justify-content: space-between;
+  }
+  &__userinner {
     @extend .flex;
     justify-content: space-between;
   }
   &__item {
-    
+    margin-bottom: 20px;
   }
   &__box {
+    background-color: #222222;
+    border-radius: 5%;
     width: 320px;
     height: 100%;
     &  iframe {
       width: 100%;
       height: 180px;
+      border-radius: 5% 5% 0 0;
     }
   }
   &__description {
@@ -189,24 +209,60 @@ main {
     width: 100%;
     height: 24px;
     overflow: hidden;
+    color: #F5F5DC;
   }
-  &__playlist {
-    display: inline;
-    background-color: pink;
-    border: 1px solid pink;
+  &__btn {
+    display: flex;
     font-weight: 600;
-    padding: 10px 40px;
-    margin: 10px auto;
     cursor: pointer;
     color: $cWhite;
-    
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
-    & > a {
-      text-decoration: none !important;
-      color: $cWhite;
-      font-size: 13px;
+    text-align: center;
+    border-radius: 0 0 5% 5%;
+    &__post {
+      background-color: black;
+      border: 1px solid black;
+      padding: 10px;
+      flex-basis: 50%;
+      border-radius: 0 0 0 5%;
+      & > a {
+        text-decoration: none !important;
+        color: #F5F5DC;
+        font-size: 13px;
+        padding: 10px; 
+        position: relative;
+        bottom: 0;
+      }
+    }
+    &__playlist {
+      background-color: pink;
+      border: 1px solid pink;
+      flex-basis: 50%;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      border-radius: 0 0 5% 0;
+      & > a {
+        text-decoration: none !important;
+        color: #F5F5DC;
+        font-size: 13px;
+      }
+    }  
+    &__userplaylist {
+      background-color: pink;
+      border: 1px solid pink;
+      flex-basis: 100%;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      border-radius: 0 0 5% 0;
+      & > a {
+        text-decoration: none !important;
+        color: #F5F5DC;
+        font-size: 13px;
+      }
     }
   }
+  
 }
 
 
@@ -216,7 +272,7 @@ main {
   display: flex;
   &__muscle {
     & > a { 
-      color: $cBlack;
+      color: $cSubTitle;
       text-decoration: none;
     }
   }
@@ -230,9 +286,8 @@ main {
 }
 
 .footer {
-  padding: 60px 0;
   @extend .content-width;
-  border-top: 1px solid $cSubTitle;
+
   &__nav {
     @extend .flex;
     justify-content: space-between;
@@ -259,6 +314,9 @@ main {
   & .logo {
     font-size: 38px;
     justify-content: center;
+  }
+  &__copyright{
+    color: $cSubTitle;
   }
 }
 

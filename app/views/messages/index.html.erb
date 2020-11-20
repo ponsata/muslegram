@@ -1,6 +1,61 @@
 <div id="content">
   <div id= "main-content">
     <div class="share">
+      <div class="user">
+        <section class="user__info">
+          <img alt="ponsata" class="user__icon" src="/assets/sample-feda2233492ed6f8a7aa9bba4fd9b4f8fd83a60d679ae7735776883162ac8bd4.png">
+          <div class = "user__pro">
+            <a href="/users/1">ponsata</a>
+              <p>Sharing 1 album</p>
+          </div>
+        </section>
+        <section class="stats">
+          <a href="/users/1/following">
+            <strong id="following" class="stat">
+              0
+            </strong>
+            <span>following</span>
+          </a>
+          <a href="/users/1/followers">
+           <strong id="followers" class="stat">
+             1
+           </strong>
+           <span>followers</span>
+          </a>
+          <span> | </span>
+          <a href="/users/1/likes" class="like_count">
+            <strong class="stat">
+              1
+            </strong>
+            <span>Likes</span>
+          </a>
+        </section>
+      </div>
+      <div class="posts_feed">
+        <ol class="posts">
+          <li class="post-1 post">
+            <img alt="ponsata" class="user-icon" src="/assets/sample-feda2233492ed6f8a7aa9bba4fd9b4f8fd83a60d679ae7735776883162ac8bd4.png">
+            <img class="youtube-icon" src="https://is2-ssl.mzstatic.com/image/thumb/Music/v4/2e/e2/c9/2ee2c9c7-9d25-6ec8-ab34-8e7d872239d5/source/100x100bb.jpg">
+            <a class="user" href="/users/1">ponsata</a>
+            <a href="/posts/1" ,="" class="heading">
+              <h2>Hollow Me / Beautiful - Yura Yura Teikoku</h2>
+            </a>
+            <div class="timestamp">
+              <span class="timestamp__left">
+                <span class="comment_count">
+                  <i class="far fa-comment"></i>
+                  <span>8</span>
+                </span>
+                <span>
+                  <i class="far fa-heart"></i>
+                  1
+                </span>
+              </span>
+              <span class="timestamp__right">Posted 1 day ago.</span>
+            </div>
+          </li>
+        </ol>
+      </div>
       <div class="share__inner"> 
         <% @messages.each do |message| %>
           <div class="share__item appear up">
@@ -38,7 +93,6 @@
                     <% else %>
                       <%= link_to "Add", youtube_playlists_path(message.youtube), method: :post %>
                     <% end %>
-                    <i class="far fa-heart"><%= message.youtube.playlists.count %></i>
                   </button>
                 <% end %>
               </div>
@@ -46,6 +100,7 @@
           </div>
         <% end %>
       </div>
+      
     </div> 
   </div>
 </div>

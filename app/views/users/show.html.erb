@@ -1,5 +1,5 @@
-<div id="content">
-  <div id= "main-content">
+<div id="user-content">
+  <div id= "user-main-content">
     <div class="userbox">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -24,10 +24,10 @@
               </div>
             <% end %>
           </div>
-          <div class="userbox__messages">
+          <div class="userbox__messages sub-title">
             投稿数:&nbsp;<%= @user.messages.count%>
           </div>
-          <div class="userbox__profile">
+          <div class="userbox__profile sub-title">
             自己紹介: <br> <span><%= @user.profile%></span>
           </div>
         </section>
@@ -43,7 +43,7 @@
           <h2 class="main-title tween-animate-title">Playlists</h2>
         </div>
       <% end %>
-      <div class="youtubes__inner">
+      <div class="youtubes__userinner">
         <% @playlist_youtubes.each do |youtube| %>
           <% @youtube = youtube%> 
           <div class="youtubes__item appear up">
@@ -55,14 +55,15 @@
               <div class="youtubes__description sub-title">
                 <%= @youtube.description%>
               </div>
-              <button class="youtubes__playlist">
-                <% if youtube.playlist_by?(current_user) %>
-                  <%= link_to "Remove",  youtube_playlists_path(youtube), method: :delete %>
-                <% else %>
-                  <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
-                <% end %>
-                <i class="far fa-heart"><%= @youtube.playlists.count %></i>
-              </button>
+              <div class="youtubes__btn">
+                <div class="youtubes__btn__userplaylist ">
+                  <% if youtube.playlist_by?(current_user) %>
+                    <%= link_to "Remove",  youtube_playlists_path(youtube), method: :delete %>
+                  <% else %>
+                    <%= link_to "Add", youtube_playlists_path(youtube), method: :post %>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
