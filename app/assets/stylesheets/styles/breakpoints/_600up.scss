@@ -44,6 +44,9 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   background-size: cover;
 }
 
+#main-content {
+  min-height: 700px;
+}
 
 .acount-page {
     &__inner {
@@ -80,12 +83,16 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 }
  
 
- .share {
-  
-  &__inner {
-    height: 774px;
-  }
+ .message {
 
+  &__user {
+    flex-basis: 22%;
+    max-height: 220px;
+  }
+  &__inner {
+    flex-basis: 65%;
+    margin-left: 20px;
+  }
   &__box {
     
     margin-bottom: 50px;

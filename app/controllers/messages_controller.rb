@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @messages = Message.all.includes(:user, :youtube)
-
+    @user = current_user
   end
 
   def show
