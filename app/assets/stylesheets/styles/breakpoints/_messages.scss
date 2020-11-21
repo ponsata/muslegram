@@ -84,13 +84,12 @@
 
 
 .messages {
-  @extend .flex;
-   max-width: 650px;
-   margin: 0 auto;
-   position: relative;
-   background-color: #222222;
-   border-radius: 5%;
-   @extend .content-width;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #222222;
+  border-radius: 5%;
+  @extend .content-width;
   &__title {
      text-align: center;
      text-transform: uppercase;
@@ -101,14 +100,12 @@
   &__video {
     width: 320px;
     height: 180px;
-    display: block;
     margin: 0 auto;
     &  iframe {
       width: 100%;
       height: 100%;
     }
-    
- 
+  
   }
   &__youtube-title {
     width: 320px;
@@ -116,72 +113,14 @@
   }
 }
 
-.contact-form {
-   .form-field {
-      position: relative;
-      margin: 32px 0;
-      & > a {
-        text-decoration: none;
-        color: $cSubTitle;
-      }
-   }
-   .input-text {
-      display: block;
-      width: 100%;
-      height: 36px;
-      border-width: 0 0 2px 0;
-      border-color: #F5F5DC;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
-      background-color: #222222;
-      color: #F5F5DC;
-      &:focus {
-         outline: none;
-      }
-      
-      &:focus,
-      &.not-empty {
-         + .label {
-            transform: translateY(-24px);
-         }
-      }
-   }
-   .label {
-      position: absolute;
-      left: 20px;
-      bottom: 11px;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
-      color: #F5F5DC;
-      cursor: text;
-      transition: transform .2s ease-in-out;
-   }
-   
-   .submit-btn {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-   }
-   
-}
 
 .message {
   @extend .flex;
   @extend .content-width;
   padding-top: $navHeight;
-
   &__user {
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 2%;
     background-color: #fdfdfd;
     padding-bottom: 8px;
     max-height: 160px;
@@ -205,7 +144,7 @@
     padding: 0 15px;
     padding-bottom: 10px;
     background-color: #fdfdfd;
-    border-radius: 5px;
+    border-radius: 2%;
     height: 600px;
     overflow: scroll;
   }
@@ -249,7 +188,7 @@
     display: inline;
 
   }
-  &__title {
+  &__titles {
     margin-top: 8px;
     color: #333;
     font-size: 15px;
@@ -264,18 +203,106 @@
     }
   }
   &__box {
-    @extend .flex;
-    margin-bottom: 50px;
-    
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #222222;
+    border-radius: 2%;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #F5F5DC;
+    padding-top: 24px;
+    font-size: 22px;
   }
   &__video {
     width: 320px;
     height: 180px;
+    margin: 0 auto;
     &  iframe {
       width: 100%;
       height: 100%;
+    }
+  
+  }
+  &__youtube-title {
+    width: 320px;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+  &__menu {
+    float: right;
+    cursor: pointer;
+    > a {
+      font-size: 15px;
+      color: $cSubTitle;
+      text-decoration: none;
+    }
+    > i {
+      font-size: 15px;
+      color: $cSubTitle;
+      margin-left: 10px;
     }
   }
 }
 
 
+.contact-form {
+  .form-field {
+     position: relative;
+     margin: 32px 0;
+     & > a {
+       text-decoration: none;
+       color: $cSubTitle;
+     }
+  }
+  .input-text {
+     display: block;
+     width: 100%;
+     height: 36px;
+     border-width: 0 0 2px 0;
+     border-color: #F5F5DC;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+     background-color: #222222;
+     color: #F5F5DC;
+     &:focus {
+        outline: none;
+     }
+     
+     &:focus,
+     &.not-empty {
+        + .label {
+           transform: translateY(-24px);
+        }
+     }
+  }
+  .label {
+     position: absolute;
+     left: 20px;
+     bottom: 11px;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+     color: #F5F5DC;
+     cursor: text;
+     transition: transform .2s ease-in-out;
+  }
+  
+  .submit-btn {
+     display: inline-block;
+     background-color: #000;
+     color: #fff;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 16px;
+     line-height: 24px;
+     padding: 8px 16px;
+     border: none;
+     cursor: pointer;
+  }
+  
+}

@@ -14,7 +14,13 @@ Rails.application.routes.draw do
     resource :playlists, only: [:create, :destroy]
   
   end
-  resources :users, only:[:edit, :show, :update]
-  resources :messages, except: :show
-
+  resources :users do 
+    member do
+      get :following, :followers
+    end
+    resources :likes, only: [:index, :create, :destroy]
+  end 
+  resources :messages
+  resources :comments, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end

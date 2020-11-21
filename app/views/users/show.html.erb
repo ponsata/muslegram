@@ -18,6 +18,24 @@
             <h2 class="userbox__name main_title">
               <%= @user.nickname%>
             </h2>
+              <div class="userbox__other">
+                <strong id="following" class="stat">
+                  <%= @user.following.count %>
+                </strong>  
+                <%= link_to "follow", following_user_path(@user)%> 
+                <strong id="followers" class="stat">
+                  <%= @user.followers.count %>
+                </strong>  
+                <%= link_to "followers", followers_user_path(@user)%>
+                <span> | </span>
+                <strong class="stat">
+                  <%= @user.like_messages.count %>
+                </strong>
+                <%= link_to "Likes", user_likes_path(@user) %>
+              </div>
+              <div class="userbox__follow-btn">
+                <%= render "follow_form" %>
+              </div>
             <% if @user.id == current_user.id %>
               <div class="userbox__edit">
                 <i class="far fa-edit"><%= link_to "プロフィールを編集", edit_user_path, method: :get %></i>

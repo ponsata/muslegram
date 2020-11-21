@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-before_action :authenticate_user!, only: [:show, :edit, :update] 
+before_action :authenticate_user!, only: [:index, :show, :edit, :update] 
+  
+  def index
+    @users = User.paginate(page: params[:page], per_page: 15)
+  end
 
   def edit
     @user = User.find(params[:id])
-    
   end
   
   def update
@@ -18,7 +21,23 @@ before_action :authenticate_user!, only: [:show, :edit, :update]
   def show
     @user = User.find(params[:id])
     @playlist_youtubes = @user.playlists.map{|playlist| playlist.youtube}
+    @messages = @user.messages.paginate(page: params[:page], per_page: 10)
   end
+
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
   
   private
   

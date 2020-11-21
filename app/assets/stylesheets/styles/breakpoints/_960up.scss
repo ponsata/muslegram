@@ -47,14 +47,10 @@ Stylesheet: 960px以上のモニタで適用
 
 
 .messages {
-  
+
   &__video {
     width: 650px;
     height: 365px;
-    iframe {
-     
-    }
-    
   }
   &__youtube-title {
     width: 650px;
@@ -85,5 +81,12 @@ Stylesheet: 960px以上のモニタで適用
   &__inner {
     flex-basis: 70%;
     margin-left: 10px;
+  }
+  &__video {
+    width: 650px;
+    height: 365px;
+  }
+  &__youtube-title {
+    width: 650px;
   }
 }

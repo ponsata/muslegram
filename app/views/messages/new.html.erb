@@ -7,7 +7,7 @@
           <iframe  src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="messages__youtube-title sub-title"> 
-          title:<%= @title %>
+          <%= @title %>
         </div> 
         <%= form_with(model: @message, url: messages_path(youtube_id: @youtube_id), local: true) do |f| %>
           <div class="contact-form row">

@@ -1,0 +1,45 @@
+<div id="content">
+  <div id= "main-content">
+    <div class="message">
+      <div class="message__user">
+        <section class="message__user__info">
+          <% if @user.image.present? %>  
+            <%= image_tag @user.image.url, class: "message__user__icon", width: '100%'%>
+          <% else %>
+            <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "message__user__icon" %>
+          <% end %>  
+          <div class = "message__user__pro">
+            <%= link_to @user.nickname, user_path(@user) %>
+              <p>投稿数:<%= @user.messages.count%></p>
+          </div>
+        </section>
+        <section class="message__usesr__stats">
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>  
+          <%= link_to "follow", following_user_path(@user)%> 
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>  
+          <%= link_to "followers", followers_user_path(@user)%>
+          <span> | </span>
+          <strong class="stat">
+            <%= @user.like_messages.count %>
+          </strong>
+          <%= link_to "Likes", user_likes_path(@user) %>
+        </section>
+      </div>
+      <div class="col-md-8">
+        <div class="users_index">
+          <h3><%= @title %></h3>
+          <% if @users.any? %>
+            <ul class="users follow">
+              <%= render @users %>
+            </ul>
+            <%= will_paginate %>
+          <% end %>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>

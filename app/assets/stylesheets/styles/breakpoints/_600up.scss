@@ -67,24 +67,21 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 
 
 .messages {
-    
-   &__video {
-      width: 500px;
-      height: 280px;
-    
-      iframe {
-        
-      }
-   }
-   &__youtube-title {
+  &__video {
      width: 500px;
-   }
-
+     height: 280px;
+   
+     iframe {
+       
+     }
+  }
+  &__youtube-title {
+    width: 500px;
+  }
 }
  
 
  .message {
-
   &__user {
     flex-basis: 22%;
     max-height: 220px;
@@ -94,40 +91,14 @@ Stylesheet: 600px以上のタブレットやモニタで適用
     margin-left: 20px;
   }
   &__box {
-    
     margin-bottom: 50px;
-    
   }
   &__video {
-    margin-right: 15px;
-    width: 350px;
-    height: 200px;
-    &  iframe {
-      
-    }
+    width: 500px;
+    height: 280px;
   }
-  &__messages{
-    width: 285px;
-    &__name {
-     
-    }
-    &__title {
-      font-size: 36px;
-    }
-    &__explanation {
-     
-      height: 80px;
-      overflow: scroll;
-
-    }
-    &__btn {
-
-    }
-    &__channel {
-      width: 100%;
-      height: 24px;
-      overflow: hidden;
-    }
+  &__youtube-title {
+    width: 500px;
   }
 }
 

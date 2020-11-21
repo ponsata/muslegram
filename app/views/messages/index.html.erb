@@ -3,44 +3,49 @@
     <div class="message">
       <div class="message__user">
         <section class="message__user__info">
-          <img alt="ponsata" class="message__user__icon" src="/assets/sample-feda2233492ed6f8a7aa9bba4fd9b4f8fd83a60d679ae7735776883162ac8bd4.png">
+          <% if @user.image.present? %>  
+            <%= image_tag @user.image.url, class: "message__user__icon", width: '100%'%>
+          <% else %>
+            <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "message__user__icon" %>
+          <% end %>  
           <div class = "message__user__pro">
             <%= link_to @user.nickname, user_path(@user) %>
               <p>投稿数:<%= @user.messages.count%></p>
           </div>
         </section>
-        <section class="message__usesr__stats">
-          <a href="/users/1/following">
-            <strong id="following" class="stat">
-              0
-            </strong>
-            <span>フォロー</span>
-          </a>
-          <a href="/users/1/followers">
-           <strong id="followers" class="stat">
-             1
-           </strong>
-           <span>フォロワー</span>
-          </a>
+        <section class="message__user__stats">
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>  
+          <%= link_to "follow", following_user_path(@user)%> 
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>  
+          <%= link_to "followers", followers_user_path(@user)%>
           <span> | </span>
-          <a href="/users/1/likes" class="like_count">
-            <strong class="stat">
-              1
-            </strong>
-            <span>Like</span>
-          </a>
+          <strong class="stat">
+            <%= @user.like_messages.count %>
+          </strong>
+          <%= link_to "Likes", user_likes_path(@user) %>
         </section>
       </div>
       <div class="message__inner">
         <div class="message__posts">
           <% @messages.each do |message| %>
             <div class="message__post">
-              <img alt="ponsata" class="user-icon" src="/assets/sample-feda2233492ed6f8a7aa9bba4fd9b4f8fd83a60d679ae7735776883162ac8bd4.png">
+              <% if @user.image.present? %>  
+                <%= image_tag @user.image.url, class: "user-icon" %>
+              <% else %>
+                <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
+              <% end %>  
               <iframe class= "youtube-icon"src="https://www.youtube.com/embed/<%= message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="message__name"> 
                  <%= link_to message.user.nickname, user_path(message.user) %>
               </div> 
-              <div class="message__title"> 
+              <div class="message__titles"> 
+                <%= link_to message.title, message_path(message) %>
+              </div> 
+              <div class="message__youtube-title"> 
                 <%= message.youtube.title %>
               </div> 
               <div class="message__timestamp">

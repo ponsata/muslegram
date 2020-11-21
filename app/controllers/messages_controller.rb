@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-
+  
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   # GET /messages
@@ -10,7 +10,10 @@ class MessagesController < ApplicationController
   end
 
   def show
-    
+    @user = @message.user
+    @youtube = @message.youtube
+    #@comment = Comment.new
+    #@comments = @message.comments
   end
 
 
@@ -32,7 +35,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @message = Message.find(params[:id])
+    
   end
 
   def update
