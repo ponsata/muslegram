@@ -1,10 +1,13 @@
 <div id="content">
   <div id= "main-content">
-
-    <div class="acount-page">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div class="acount-page__inner clearfix">
+    <div class="acount-page appear up">
+      <% if notice.present?%>
+        <p class="notice item"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert item "><%= alert %></p>
+      <% end %>
+      <div class="acount-page__inner item clearfix">
         <div class="acount-page__inner__left acount-page__header">
           <h2 class="main-title">Log In</h2>
           <span class= "sub-title">登録済みのユーザーでログインしてください </span>

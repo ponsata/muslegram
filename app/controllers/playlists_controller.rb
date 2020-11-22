@@ -1,5 +1,5 @@
 class PlaylistsController < ApplicationController
-
+  protect_from_forgery except: [:create, :destroy]
   def create 
     @playlist = current_user.playlists.build(youtube_id: params[:youtube_id])
     @playlist.save

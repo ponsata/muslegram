@@ -15,3 +15,47 @@
 //= require jquery
 //= require_tree .
 // require jquery_ujs
+
+
+$(function() {
+  // generate embed URL
+  function generate_html(id) {
+    return $('<iframe>',{ src: first_part_url + id + latter_part_url,
+                          frameborder: 0,
+                          sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation",
+                          allow: "autoplay *; encrypted-media *;",
+                          style: "height: 450px; width: 100%; max-width: 450px; overflow: hidden; border-radius: 10px; background: transparent;" });
+  }
+
+  $(document).on('turbolinks:load', function() {
+    // like button popup
+    $('#like_form').hover(
+      function() {
+        $('#like_popup').css('display', 'block');
+      },
+      function() {
+        $('#like_popup').css('display', 'none');
+      }
+    );
+
+    // scrollbar for search results
+    $('#results').mCustomScrollbar();
+  
+    // back-to-top button
+    $('#back_to_top').click(function() {
+      $('html, body').animate({ 'scrollTop': 0 }, 'slow');
+    });
+
+    // switch home slide images
+    $('.index_btn').click(function() {
+      var clickedIndex = $('.index_btn').index(this);
+      if ( clickedIndex != index ) {
+        $slide.eq(index).css('display', 'none');
+        $info.eq(index).css('display', 'none');
+        index = clickedIndex;
+        $slide.eq(index).fadeIn();
+        $info.eq(index).fadeIn();
+      }
+    });
+  });
+});  

@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Helpers
 
-body {
-   font-family: "Kameron", "Noto Sans JP", sans-serif;
- }
  img {
    max-width: 100%;
    vertical-align: bottom;
@@ -56,24 +53,7 @@ body {
  .purple {
    color: $cRed;
  }
- 
- #main-content {
-   position: relative;
-   z-index: 0;
- }
- 
- main {
-   position: relative;
-   z-index: -1;
- }
- 
- #container {
-   background-color: $cWhite;
-   position: relative;
-   z-index: 10;
-   transition: transform 0.5s, box-shadow 0.5s;
- }
- 
+
 
 @mixin clearfix {
    &:after {
@@ -104,31 +84,28 @@ body {
 
 
 .messages {
-   max-width: 650px;
-   margin: 0 auto;
-   position: relative;
-   top: 50%;
-   @extend .content-width;
-   @extend .mb-lg;
-   padding-top: $navHeight;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #222222;
+  border-radius: 5%;
+  @extend .content-width;
   &__title {
      text-align: center;
      text-transform: uppercase;
      letter-spacing: 3px;
-     font-size: 36px;
-     line-height: 48px;
+     color: $cSubTitle;
+     padding-top: 24px;
   }
   &__video {
     width: 320px;
     height: 180px;
-    display: block;
     margin: 0 auto;
     &  iframe {
       width: 100%;
       height: 100%;
     }
-    
- 
+  
   }
   &__youtube-title {
     width: 320px;
@@ -136,112 +113,306 @@ body {
   }
 }
 
-.contact-form {
-   .form-field {
-      position: relative;
-      margin: 32px 0;
-   }
-   .input-text {
-      display: block;
-      width: 100%;
-      height: 36px;
-      border-width: 0 0 2px 0;
-      border-color: #000;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
-      
-      &:focus {
-         outline: none;
-      }
-      
-      &:focus,
-      &.not-empty {
-         + .label {
-            transform: translateY(-24px);
-         }
-      }
-   }
-   .label {
-      position: absolute;
-      left: 20px;
-      bottom: 11px;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
-      color: #888;
-      cursor: text;
-      transition: transform .2s ease-in-out;
-   }
-   
-   .submit-btn {
-      display: inline-block;
-      background-color: #000;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-   }
-   & > a {
-     text-decoration: none;
-     color: $cSubTitle;
-   }
-}
 
-.share {
+.message {
+  @extend .flex;
   @extend .content-width;
-  @extend .mb-lg;
   padding-top: $navHeight;
-  &__inner {
-    @extend .flex;
-    justify-content: space-between;
+  &__user {
+    margin: 0 auto 20px;
+    width: 100%;
+    border-radius: 2%;
+    background-color: #222222;
+    padding-bottom: 8px;
+    max-height: 160px;
+    &.user__info {
+      padding-bottom: 8px;
+    }
+    &__icon {
+      float: left;
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      background-color: $cSubTitle;
+      margin: 10px 10px 0 10px;
+      background-color: $cSubTitle;
+    }
+    &__pro {
+      /* float: left; */
+      padding-top: 15px;
+      font-size: 20px;
+      color: $cSubTitle;
+      margin-left: 90px;
+      & > a {
+        color: $cSubTitle;
+        text-decoration: none;
+      }
+    }
+    &__stats {
+      & > strong {
+        color: $cSubTitle;
+      }
+      & > a {
+        color: $cSubTitle;
+        text-decoration: none;
+      }
+    }
   }
-
+  &__inner {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    background-color: #222222;
+    border-radius: 2%;
+    height: 600px;
+    overflow: scroll;
+  }
+  &__posts {
+    list-style: none;
+    padding: 0;
+  }
+  &__post {
+    overflow: hidden;
+    padding: 10px 0;
+    border-bottom: 1px solid $cSubTitle;
+    & > .user-icon{
+      float: left;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: 5px;
+      background-color: $cSubTitle;
+    }
+    & > .youtube-icon {
+      float: right;
+      width: 120px;
+      height: 70px;
+    }
+    &__timestamp {
+      color: #808080;
+      display: block;
+      margin-left: 60px;
+      &__right {
+        float: right;
+        margin-right: 15px;
+      }
+    }
+  }
+  &__name {
+    font-size: 13px;
+    color: $cSubTitle;
+    display: inline;
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
+    }
+  }
+  &__titles {
+    margin-top: 8px;
+    cursor: pointer;
+    & > a {
+      margin: 15px 0;
+      color: $cSubTitle;
+      font-size: 14px;
+      text-align: left;
+      text-decoration: none;
+      color: $cSubTitle;
+    }
+  }
+  &__youtube-title {
+    font-size: 12px;
+    color: $cSubTitle;
+    margin: 10px auto;
+  }
+  &__timestamp {
+    color: $cSubTitle;
+    text-align: right;
+    &__right {
+      margin-left: 5px;
+    }
+  }
   &__box {
-    @extend .flex;
-    margin-bottom: 50px;
-    
+    max-width: 650px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #222222;
+    border-radius: 2%;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $cSubTitle;
+    padding-top: 24px;
+    font-size: 22px;
   }
   &__video {
     width: 320px;
     height: 180px;
+    margin: 0 auto;
     &  iframe {
       width: 100%;
       height: 100%;
     }
+  
   }
-  &__messages{
-    width: 320px;
-    &__name {
-      @extend .font-lr;
+  &__menu {
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $cSubTitle;
+    & > div {
+      margin-right: 20px;
+      font-size: 20px;
       & > a {
-        margin-left: 2px;
-        text-decoration: none;
+        color: $cSubTitle;
       }
     }
+  }
+  &__comments {
+    padding: 0 15px; 
     &__title {
-      margin-bottom: 5px;
+      color: $cSubTitle;
+      font-size: 20px;
+      padding: 5px 0;
     }
-    &__explanation {
-
-      height: 80px;
-      overflow: scroll;
-
-    }
-    &__btn {
-      text-align: center;
-      flex-basis: 100%;
-    }
-    &__channel {
-      width: 100%;
-      height: 24px;
+    &__form {
       overflow: hidden;
-      margin-bottom: 8px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $cSubTitle;
+      & > form {
+        & > .form-control {
+          width: 100%;
+          background-color: $cSubTitle;
+        }
+        & > .btn {
+          display: block;
+          margin: 5px 0 0 auto;
+          background-color: $cSubTitle;
+        }
+      }
+    }
+    &__group{
+      padding: 0px 0 10px;
+      overflow: scroll;
+      height: 200px;
     }
   }
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid $cSubTitle;
+    padding-bottom: 10px;
+    &__icon {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-top: 5px;
+      background-color: $cSubTitle;
+      & > img { 
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    &__content {
+      color:  $cSubTitle;
+      width: 100%;
+      &__name {
+        & > a {
+          text-decoration: none;
+          color:  $cSubTitle;
+        }
+      }
+      &__timestamp {
+        text-align: right;
+        & > a {
+          text-decoration: none;
+          color:  $cSubTitle;
+          border: 1px solid $cSubTitle;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.contact-form {
+  .form-field {
+     position: relative;
+     margin: 32px 0;
+     & > a {
+       text-decoration: none;
+       color: $cSubTitle;
+     }
+  }
+  .input-text {
+     display: block;
+     width: 100%;
+     height: 36px;
+     border-width: 0 0 2px 0;
+     border-color: $cSubTitle;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+     background-color: #222222;
+     color: $cSubTitle;
+     &:focus {
+        outline: none;
+     }
+     
+     &:focus,
+     &.not-empty {
+        + .label {
+           transform: translateY(-24px);
+        }
+     }
+  }
+  .label {
+     position: absolute;
+     left: 20px;
+     bottom: 11px;
+     font-size: 18px;
+     line-height: 26px;
+     font-weight: 400;
+     color: $cSubTitle;
+     cursor: text;
+     transition: transform .2s ease-in-out;
+  }
+  
+  .submit-btn {
+     display: inline-block;
+     background-color: #000;
+     color: #fff;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-size: 16px;
+     line-height: 24px;
+     padding: 8px 16px;
+     border: none;
+     cursor: pointer;
+  }
+  
+}
+
+button {
+  border-style: none;
+  background-color: #222222;
+  color: $cSubTitle;
+}
+.like_button .heart_red {
+  color: red;
+}
+.like .heart {
+  color: $cSubTitle;
+}
+.liked {
+  color: red;
 }
 

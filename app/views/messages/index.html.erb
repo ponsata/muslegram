@@ -1,50 +1,70 @@
 <div id="content">
   <div id= "main-content">
-    <div class="share">
-      <div class="share__inner"> 
-        <% @messages.each do |message| %>
-          <div class="share__item appear up">
-            <div class= "share__box item">
-              <div class="share__video">
-                <iframe src="https://www.youtube.com/embed/<%= message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="message">
+      <div class="message__user">
+        <section class="message__user__info">
+          <% if @user.image.present? %>  
+            <%= image_tag @user.image.url, class: "message__user__icon", width: '100%'%>
+          <% else %>
+            <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "message__user__icon" %>
+          <% end %>  
+          <div class = "message__user__pro">
+            <%= link_to @user.nickname, user_path(@user) %>
+              <div class= "message__user__pro__count">
+                投稿数:<%= @user.messages.count%>
               </div>
-              <div class="share__messages">
-                <div class="share__messages__name"> 
-                  投稿者: <%= link_to message.user.nickname, user_path(message.user) %>
-                </div> 
-                <div class="share__messages__channel sub-title"> 
-                  チャンネル名:&nbsp;<%= message.youtube.channel_title %>
-                </div> 
-                <div class="share__messages__title sub-title">
-                   タイトル:<br><%= message.title %>
-                </div>
-                <div class="share__messages__explanation sub-title">
-                  コメント:<br><%= message.explanation%>
-                </div>
-                <% if user_signed_in? %>
-                  <% if message.user_id == current_user.id %>
-                    <button class="youtubes__post btn filled item">
-                      <%= link_to "編集", edit_message_path(message) %>
-                    </button>
-                    <button class="youtubes__post btn filled item">
-                      <%= link_to "削除", message_path(message), method: :delete %>
-                    </button>
-                  <% end %>
-                <% end%>
-                <% if user_signed_in? %>
-                  <button class="youtubes__playlist">
-                    <% if message.youtube.playlist_by?(current_user) %>
-                      <%= link_to "Remove", youtube_playlists_path(message.youtube), method: :delete %>
-                    <% else %>
-                      <%= link_to "Add", youtube_playlists_path(message.youtube), method: :post %>
-                    <% end %>
-                    <i class="far fa-heart"><%= message.youtube.playlists.count %></i>
-                  </button>
-                <% end %>
+          </div>
+        </section>
+        <section class="message__user__stats">
+          <strong id="following" class="stat">
+            <%= @user.following.count %>
+          </strong>  
+          <%= link_to "follow", following_user_path(@user)%> 
+          <strong id="followers" class="stat">
+            <%= @user.followers.count %>
+          </strong>  
+          <%= link_to "followers", followers_user_path(@user)%>
+          <strong class="stat">
+            <%= @user.like_messages.count %>
+          </strong>
+          <%= link_to "Likes", user_likes_path(@user) %>
+        </section>
+      </div>
+      <div class="message__inner">
+        <div class="message__posts">
+          <% @messages.each do |message| %>
+            <div class="message__post">
+              <% if message.user.image.present? %>  
+                <%= image_tag message.user.image.url, class: "user-icon" %>
+              <% else %>
+                <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
+              <% end %>  
+              <iframe class= "youtube-icon"src="https://www.youtube.com/embed/<%= message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="message__name"> 
+                 <%= link_to message.user.nickname, user_path(message.user) %>
+              </div> 
+              <div class="message__titles"> 
+                <%= link_to message.title, message_path(message) %>
+              </div> 
+              <div class="message__youtube-title"> 
+                <%= message.youtube.title %>
+              </div> 
+              <div class="message__timestamp">
+                <span class="message__timestamp__left">
+                  <span class="message__comment">
+                    <i class="far fa-comment"></i>
+                    <%= message.comments.count%>
+                  </span>
+                  <span>
+                    <i class="far fa-heart"></i>
+                    <%= message.likes.count%>
+                  </span>
+                </span>
+                <span class="message__timestamp__right"><%= time_ago_in_words(message.created_at) %> 前の投稿</span>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div> 
   </div>

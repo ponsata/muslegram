@@ -1,0 +1,9 @@
+<li>
+  <% if user.image.present? %>  
+    <%= image_tag user.image.url, class: "message__user__icon", width: '100%'%>
+  <% else %>
+    <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "message__user__icon" %>
+  <% end %>  
+  <%= link_to user.nickname, user_path(user), class: "user" %>
+  <div class="user_profile"><%= user.profile %></div>
+</li>

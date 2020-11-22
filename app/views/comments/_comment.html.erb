@@ -1,0 +1,23 @@
+<li class="message__list">
+  <div class="message__list__icon">
+    <% if comment.user.image.present? %>  
+      <%= image_tag comment.user.image.url%>
+    <% else %>
+      <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
+    <% end %>  
+  </div>
+  <div class="message__list__content">
+    <div class="message__list__content__name">
+      <%= link_to comment.user.nickname, comment.user, class: "user" %>
+    </div>
+    <div class="message__list__content__comment">
+      <%= safe_join(comment.comment.split("\n"), tag(:br)) %>
+    </div>
+    <div class="message__list__content__timestamp">
+      <% if current_user == comment.user %>
+        <%= link_to "delete", comment, method: :delete, data: { confirm: "本当に消しますか?" } %>
+      <% end %>
+       <%= time_ago_in_words(comment.created_at) %>前
+    </div>
+  </div>
+</li>

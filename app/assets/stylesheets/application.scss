@@ -1,4 +1,3 @@
-@import 'loader';
 @import 'styles/modules/variables';
 @import 'styles/modules/mixin';
 @import 'styles/modules/appear';
@@ -39,5 +38,6 @@
   @import "styles/breakpoints/2x";
 }
 
-
-
+#error_explanation {
+  color: #F5F5DC;
+}

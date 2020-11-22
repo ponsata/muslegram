@@ -51,13 +51,8 @@ class YoutubesController < ApplicationController
 
   def index
     @youtubes = Youtube.all.includes(:playlists)
-
     if user_signed_in?
       @playlist = current_user.playlists.includes(user: :youtube)
     end
-   
-  end
-
-
-  
+  end  
 end

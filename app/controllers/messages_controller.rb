@@ -1,16 +1,19 @@
 class MessagesController < ApplicationController
-
+  
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /messages
   # GET /messages.json
   def index
     @messages = Message.all.includes(:user, :youtube)
-
+    @user = current_user
   end
 
   def show
-    
+    @user = @message.user
+    @youtube = @message.youtube
+    @comment = Comment.new
+    @comments = @message.comments
   end
 
 
@@ -32,7 +35,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
-    @message = Message.find(params[:id])
+    @comment = Comment.new
   end
 
   def update
