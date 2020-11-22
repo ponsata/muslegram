@@ -1,7 +1,7 @@
 <div id="content">
   <div id= "main-content">
-    <div class="message">
-      <div class="message__user">
+    <div class="message appear up">
+      <div class="message__user item">
         <section class="message__user__info">
           <% if @user.image.present? %>  
             <%= image_tag @user.image.url, class: "message__user__icon", width: '100%'%>
@@ -29,7 +29,7 @@
           <%= link_to "Likes", user_likes_path(@user) %>
         </section>
       </div>
-      <div class="message__box">
+      <div class="message__box item">
         <div class="message__title"><%= @youtube.title %></div>
         <div class="message__video">
           <iframe  src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -40,24 +40,35 @@
         <div class="message__youtube-title sub-title"> 
           <%= @message.explanation %>
         </div> 
-        <div class="message__menu ">
-          <%= link_to '一覧に戻る', messages_path %>
+        <div class="message__menu">
+          <div class="message__menu__undo">
+            <%= link_to messages_path, method: :get do  %>
+              <i class="fas fa-undo-alt"></i>
+            <% end %>
+          </div>
+          <div class="message__menu__like">
+            <%= render 'like_form' %>
+          </div>
           <% if current_user.id == @user.id %>
-            <%= link_to edit_message_path, method: :get do %>
-             <i class="far fa-edit"></i>
-            <% end %>
-            <%= link_to message_path, method: :delete do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
+            <div class="message__menu__edit">
+              <%= link_to edit_message_path, method: :get do %>
+               <i class="far fa-edit"></i>
+              <% end %>
+            </div>
+            <div class="message__menu__trash">
+              <%= link_to message_path, method: :delete do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
           <% end %>
         </div>
-        <!--<div class="post_comments">
-          <h3>Comment (<%= @post.comments.count %>)</h3>
+        <div class="message__comments">
+          <div class = "message__comments__title ">Comment<%= @message.comments.count %></div>
           <%= render 'comments/comment_form' %>
-          <ul class="comments">
+          <ul class="message__comments__group">
             <%= render @comments %>
           </ul>
-        </div> -->
+        </div> 
       </div>
     </div>
   </div>

@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 
   # return true when an user likes a message
-  def like?(post)
+  def like?(message)
     like_messages.include?(message)
   end
 

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @message
     else
-      flash[:danger] = "Comment should not be empty or too long (up to 140 characters)."
+      flash[:alert] = "Comment should not be empty or too long (up to 140 characters)."
       redirect_to message_url(@message, comment_content: params[:comment][:content])
     end
   end
@@ -16,12 +16,12 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to request.referer
+    redirect_back(fallback_location: message_path)
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:user_id, :message_id, :content)
+    params.require(:comment).permit(:user_id, :message_id, :comment)
   end
 end

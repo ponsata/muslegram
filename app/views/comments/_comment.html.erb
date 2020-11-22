@@ -1,15 +1,23 @@
-<li class="comment-<%= comment.id %> comment row">
-  <div class="col-md-1">
-    <%= icon_for(comment.user) %>
+<li class="message__list">
+  <div class="message__list__icon">
+    <% if @user.image.present? %>  
+      <%= image_tag @user.image.url%>
+    <% else %>
+      <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
+    <% end %>  
   </div>
-  <div class="col-md-11">
-    <%= link_to comment.user.name, comment.user, class: "user" %>
-    <p><%= safe_join(comment.content.split("\n"), tag(:br)) %></p>
-    <div class="timestamp">
-      <% if current_user?(comment.user) %>
+  <div class="message__list__content">
+    <div class="message__list__content__name">
+      <%= link_to comment.user.nickname, comment.user, class: "user" %>
+    </div>
+    <div class="message__list__content__comment">
+      <%= safe_join(comment.comment.split("\n"), tag(:br)) %>
+    </div>
+    <div class="message__list__content__timestamp">
+      <% if current_user == comment.user %>
         <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" } %>
       <% end %>
-      Posted <%= time_ago_in_words(comment.created_at) %> ago.
+       <%= time_ago_in_words(comment.created_at) %>前
     </div>
   </div>
 </li>

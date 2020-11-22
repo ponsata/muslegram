@@ -1,12 +1,12 @@
 <div id="content">
   <div id= "main-content">
-    <div class="youtubes">
+    <div class="youtubes appear up">
       <div>
         <h2 class="main-title tween-animate-title">Find Your Videos</h2>
       </div>
       <div class="youtubes__inner">
         <% if @youtubes.blank? %>
-          <div class="result-none sub-title">
+          <div class="result-none item sub-title">
             <%= flash[:alert] %>
           </div>
         <% else %>
