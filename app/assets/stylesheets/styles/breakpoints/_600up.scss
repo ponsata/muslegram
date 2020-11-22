@@ -82,13 +82,24 @@ Stylesheet: 600px以上のタブレットやモニタで適用
  
 
  .message {
+  &__post {
+    & > .youtube-icon {
+      width: 200px;
+      height: 117px;
+    }
+  }
+  &__titles { 
+    & > a {
+      font-size: 20px;
+    }
+  }
   &__user {
-    flex-basis: 22%;
     max-height: 220px;
+    width: 650px;
+
   }
   &__inner {
-    flex-basis: 65%;
-    margin-left: 20px;
+    width: 650px;
   }
   &__box {
     margin-bottom: 50px;
@@ -113,7 +124,6 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   }
   &__left {
     &__icon {
-    
       & > img {
         display: block;
         margin: 0 auto;

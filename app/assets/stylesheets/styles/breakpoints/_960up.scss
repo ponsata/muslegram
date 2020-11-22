@@ -77,6 +77,15 @@ Stylesheet: 960px以上のモニタで適用
 
   &__user {
     max-height: 160px;
+    width: auto;
+    flex-basis: 22%;
+    &__pro {
+      margin: 0 0 30px 90px;
+    }
+    &__stats {
+      line-height: 50px;
+      text-align: center;
+    }
   }
   &__inner {
     flex-basis: 70%;

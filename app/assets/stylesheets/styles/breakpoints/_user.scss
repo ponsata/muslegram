@@ -279,4 +279,23 @@ img {
     height: 24px;
     overflow: hidden;
   }
+  &__other {
+    & > strong {
+      color: $cSubTitle;
+    }
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
+    }
+  }
+  &__follow-btn {
+    & > .follow_form {
+      & > form {
+        & > input {
+          background-color: $cSubTitle;
+          color: #222222;
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,9 @@
 <div id="content">
   <div id= "main-content">
     <div class="message appear up">
+      <% if alert.present? %>
+        <p class="alert item "><%= alert %></p>
+      <% end %>
       <div class="message__user item">
         <section class="message__user__info">
           <% if @user.image.present? %>  
@@ -10,7 +13,9 @@
           <% end %>  
           <div class = "message__user__pro">
             <%= link_to @user.nickname, user_path(@user) %>
-              <p>投稿数:<%= @user.messages.count%></p>
+              <div class= "message__user__pro__count">
+                投稿数:<%= @user.messages.count%>
+              </div>
           </div>
         </section>
         <section class="message__user__stats">
@@ -22,7 +27,6 @@
             <%= @user.followers.count %>
           </strong>  
           <%= link_to "followers", followers_user_path(@user)%>
-          <span> | </span>
           <strong class="stat">
             <%= @user.like_messages.count %>
           </strong>
@@ -56,7 +60,7 @@
               <% end %>
             </div>
             <div class="message__menu__trash">
-              <%= link_to message_path, method: :delete do %>
+              <%= link_to message_path, method: :delete, data: { confirm: "本当に消しますか?" } do %>
                 <i class="far fa-trash-alt"></i>
               <% end %>
             </div>

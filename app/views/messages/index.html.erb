@@ -10,7 +10,9 @@
           <% end %>  
           <div class = "message__user__pro">
             <%= link_to @user.nickname, user_path(@user) %>
-              <p>投稿数:<%= @user.messages.count%></p>
+              <div class= "message__user__pro__count">
+                投稿数:<%= @user.messages.count%>
+              </div>
           </div>
         </section>
         <section class="message__user__stats">
@@ -22,7 +24,6 @@
             <%= @user.followers.count %>
           </strong>  
           <%= link_to "followers", followers_user_path(@user)%>
-          <span> | </span>
           <strong class="stat">
             <%= @user.like_messages.count %>
           </strong>
@@ -33,8 +34,8 @@
         <div class="message__posts">
           <% @messages.each do |message| %>
             <div class="message__post">
-              <% if @user.image.present? %>  
-                <%= image_tag @user.image.url, class: "user-icon" %>
+              <% if message.user.image.present? %>  
+                <%= image_tag message.user.image.url, class: "user-icon" %>
               <% else %>
                 <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
               <% end %>  
@@ -52,11 +53,11 @@
                 <span class="message__timestamp__left">
                   <span class="message__comment">
                     <i class="far fa-comment"></i>
-                    <span>8</span>
+                    <%= message.comments.count%>
                   </span>
                   <span>
                     <i class="far fa-heart"></i>
-                    1
+                    <%= message.likes.count%>
                   </span>
                 </span>
                 <span class="message__timestamp__right"><%= time_ago_in_words(message.created_at) %> 前の投稿</span>

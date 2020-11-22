@@ -94,7 +94,7 @@
      text-align: center;
      text-transform: uppercase;
      letter-spacing: 3px;
-     color: #F5F5DC;
+     color: $cSubTitle;
      padding-top: 24px;
   }
   &__video {
@@ -119,9 +119,10 @@
   @extend .content-width;
   padding-top: $navHeight;
   &__user {
-    padding: 15px;
+    margin: 0 auto 20px;
+    width: 100%;
     border-radius: 2%;
-    background-color: #fdfdfd;
+    background-color: #222222;
     padding-bottom: 8px;
     max-height: 160px;
     &.user__info {
@@ -132,18 +133,35 @@
       height: 80px;
       width: 80px;
       border-radius: 50%;
+      background-color: $cSubTitle;
+      margin: 10px 10px 0 10px;
+      background-color: $cSubTitle;
     }
     &__pro {
       /* float: left; */
       padding-top: 15px;
       font-size: 20px;
-      color: #333;
+      color: $cSubTitle;
+      margin-left: 90px;
+      & > a {
+        color: $cSubTitle;
+        text-decoration: none;
+      }
+    }
+    &__stats {
+      & > strong {
+        color: $cSubTitle;
+      }
+      & > a {
+        color: $cSubTitle;
+        text-decoration: none;
+      }
     }
   }
   &__inner {
-    padding: 0 15px;
+    margin: 0 auto;
     padding-bottom: 10px;
-    background-color: #fdfdfd;
+    background-color: #222222;
     border-radius: 2%;
     height: 600px;
     overflow: scroll;
@@ -155,7 +173,7 @@
   &__post {
     overflow: hidden;
     padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid $cSubTitle;
     & > .user-icon{
       float: left;
       height: 50px;
@@ -163,11 +181,12 @@
       border-radius: 50%;
       margin-right: 10px;
       margin-top: 5px;
+      background-color: $cSubTitle;
     }
     & > .youtube-icon {
       float: right;
-      width: 200px;
-      height: 117px;
+      width: 120px;
+      height: 70px;
     }
     &__timestamp {
       color: #808080;
@@ -183,20 +202,33 @@
     font-size: 13px;
     color: $cSubTitle;
     display: inline;
-
+    & > a {
+      color: $cSubTitle;
+      text-decoration: none;
+    }
   }
   &__titles {
     margin-top: 8px;
-    color: #333;
-    font-size: 15px;
-    text-decoration: none;
     cursor: pointer;
     & > a {
       margin: 15px 0;
-      color: #333;
-      font-size: 20px;
+      color: $cSubTitle;
+      font-size: 14px;
       text-align: left;
       text-decoration: none;
+      color: $cSubTitle;
+    }
+  }
+  &__youtube-title {
+    font-size: 12px;
+    color: $cSubTitle;
+    margin: 10px auto;
+  }
+  &__timestamp {
+    color: $cSubTitle;
+    text-align: right;
+    &__right {
+      margin-left: 5px;
     }
   }
   &__box {
@@ -210,7 +242,7 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #F5F5DC;
+    color: $cSubTitle;
     padding-top: 24px;
     font-size: 22px;
   }
@@ -223,11 +255,6 @@
       height: 100%;
     }
   
-  }
-  &__youtube-title {
-    width: 320px;
-    margin: 0 auto;
-    font-size: 20px;
   }
   &__menu {
     display: flex;
@@ -268,6 +295,8 @@
     }
     &__group{
       padding: 0px 0 10px;
+      overflow: scroll;
+      height: 200px;
     }
   }
   &__list {
@@ -277,11 +306,17 @@
     border-bottom: 1px solid $cSubTitle;
     padding-bottom: 10px;
     &__icon {
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       border-radius: 50%;
       margin-right: 10px;
       margin-top: 5px;
+      background-color: $cSubTitle;
+      & > img { 
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
     }
     &__content {
       color:  $cSubTitle;
@@ -322,12 +357,12 @@
      width: 100%;
      height: 36px;
      border-width: 0 0 2px 0;
-     border-color: #F5F5DC;
+     border-color: $cSubTitle;
      font-size: 18px;
      line-height: 26px;
      font-weight: 400;
      background-color: #222222;
-     color: #F5F5DC;
+     color: $cSubTitle;
      &:focus {
         outline: none;
      }
@@ -346,7 +381,7 @@
      font-size: 18px;
      line-height: 26px;
      font-weight: 400;
-     color: #F5F5DC;
+     color: $cSubTitle;
      cursor: text;
      transition: transform .2s ease-in-out;
   }
@@ -369,7 +404,7 @@
 button {
   border-style: none;
   background-color: #222222;
-  color: #F5F5DC;
+  color: $cSubTitle;
 }
 .like_button .heart_red {
   color: red;

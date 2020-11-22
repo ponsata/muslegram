@@ -1,7 +1,7 @@
 <div class="message__comments__form">
   <%= form_for(@comment) do |f| %>
     <%= f.hidden_field :message_id, value: @message.id %>
-    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.text_area :comment, value: params[:comment_content], class: "form-control", placeholder: "comment to this impression! (up to 140 characters)" %>
     <%= f.submit "comment", class: "btn" %>
   <% end %>

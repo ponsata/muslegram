@@ -10,10 +10,12 @@
           <% end %>  
           <div class = "message__user__pro">
             <%= link_to @user.nickname, user_path(@user) %>
-              <p>投稿数:<%= @user.messages.count%></p>
+              <div class= "message__user__pro__count">
+                投稿数:<%= @user.messages.count%>
+              </div>
           </div>
         </section>
-        <section class="message__usesr__stats">
+        <section class="message__user__stats">
           <strong id="following" class="stat">
             <%= @user.following.count %>
           </strong>  
@@ -22,7 +24,6 @@
             <%= @user.followers.count %>
           </strong>  
           <%= link_to "followers", followers_user_path(@user)%>
-          <span> | </span>
           <strong class="stat">
             <%= @user.like_messages.count %>
           </strong>
@@ -30,10 +31,10 @@
         </section>
       </div>
       <div class="col-md-8">
-        <div class="users_index">
+        <div class="user_index">
           <h3><%= @title %></h3>
           <% if @users.any? %>
-            <ul class="users follow">
+            <ul class="user">
               <%= render @users %>
             </ul>
             <%= will_paginate %>

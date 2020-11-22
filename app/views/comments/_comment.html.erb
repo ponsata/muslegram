@@ -1,7 +1,7 @@
 <li class="message__list">
   <div class="message__list__icon">
-    <% if @user.image.present? %>  
-      <%= image_tag @user.image.url%>
+    <% if comment.user.image.present? %>  
+      <%= image_tag comment.user.image.url%>
     <% else %>
       <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
     <% end %>  
@@ -15,7 +15,7 @@
     </div>
     <div class="message__list__content__timestamp">
       <% if current_user == comment.user %>
-        <%= link_to "delete", comment, method: :delete, data: { confirm: "You sure?" } %>
+        <%= link_to "delete", comment, method: :delete, data: { confirm: "本当に消しますか?" } %>
       <% end %>
        <%= time_ago_in_words(comment.created_at) %>前
     </div>

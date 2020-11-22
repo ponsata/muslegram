@@ -320,3 +320,20 @@ main {
   }
 }
 
+.notice {
+  color: $cSubTitle;;
+  padding: 6px;
+  border: 3px solid;
+  display: inline-block;
+  background-color: #222222;
+  border-radius: 5px;
+}
+.alert {
+  color: red;
+  padding: 6px;
+  border: 3px solid;
+  display: inline-block;
+  background-color: $cSubTitle;
+  border-radius: 5px;
+}
+

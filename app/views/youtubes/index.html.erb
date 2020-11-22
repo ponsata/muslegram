@@ -1,8 +1,12 @@
 <div id="content">
   <div id= "main-content">
     <div class="youtubes appear up">
-      <p class="notice item"><%= notice %></p>
-      <p class="alert item "><%= alert %></p>
+      <% if notice.present?%>
+        <p class="notice item"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert item "><%= alert %></p>
+      <% end %>
       <div>
         <h2 class="main-title tween-animate-title">Find Your Videos</h2>
       </div>
