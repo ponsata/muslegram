@@ -17,13 +17,13 @@
 ## Production environment 
   [Musclegram/サイトURL](https://musclegram.net/)
 ## Screenshots 
- ![32a3495364dff358bdf08bb933a073d5](https://user-images.githubusercontent.com/65805662/95764116-fc515000-0cea-11eb-8951-5ff4b41692f5.jpg)
+ ![toppage](https://user-images.githubusercontent.com/65805662/99909868-4556e400-2d2e-11eb-8e29-97b8f2178619.jpg)
 
- ![1e9e610936db3bdb5710739265d7a2c8](https://user-images.githubusercontent.com/65805662/95764130-feb3aa00-0cea-11eb-853d-a169541fb743.jpg)
+ ![mypage](https://user-images.githubusercontent.com/65805662/99909870-47b93e00-2d2e-11eb-8694-a71a7bff94b5.jpg)
 
- ![bb695b8ade237e201be4687b335a54c9](https://user-images.githubusercontent.com/65805662/95764147-02473100-0ceb-11eb-9341-707e6d1abdb8.jpg)
+ ![message](https://user-images.githubusercontent.com/65805662/99909871-48ea6b00-2d2e-11eb-9d1f-c4da3370254a.jpg)
 
- ![dad63671940a179a52cb5fd7d59cbb3f](https://user-images.githubusercontent.com/65805662/95764151-0410f480-0ceb-11eb-8b9d-3f7854f656c8.jpg)
+ ![post](https://user-images.githubusercontent.com/65805662/99909872-4a1b9800-2d2e-11eb-9dcc-55c7c5ee2e64.jpg)
 
 ## Development environment Technology used 
 <img width="973" alt="b6324ded8d57822aea9a4684193351ab" src="https://user-images.githubusercontent.com/65805662/95767262-74ba1000-0cef-11eb-9a98-2d5610578126.png">
@@ -44,6 +44,11 @@
 - ゲストログイン機能
 - 新規登録、ログイン、ログアウト
 - マイページ、登録情報編集
+- ユーザー一覧表示
+
+◆フォロー機能
+- 非同期通信
+- 相互フォロー機能
 
 ◆Youtube 動画視聴
 - youtube Video API使用
@@ -56,17 +61,17 @@
 ◆投稿機能
 - 一覧表示 投稿、編集、削除機能
 
-◆ブックマーク機能 いいね機能
+◆Llke機能
+- Likeボタン
+- 非同期通信
+◆プレイリスト機能 
+
 - ブックマーク作成と削除
 - ユーザマイページにてプレイリスト登録
 
-◆レスポンシブデザイン対応 ※iphone5 SE　非対応
-◆ページローダー機能
-
+◆レスポンシブデザイン対応 
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.online/)
 ## Function/features to improve 
-- 全体的デザインの見直し
-- ユーザーフォロー機能とグループチャット機能
-- 非同期通信(Ajax)
 - Circle ci 実装
+- テスト数を増やす
