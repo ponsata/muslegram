@@ -4,7 +4,7 @@ class LikesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @likes = @user.likes.order(created_at: "DESC").map(&:message)
+    @messages = @user.likes.order(created_at: "DESC").map(&:message)
   end
 
   def create

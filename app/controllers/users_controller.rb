@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 before_action :authenticate_user!
   
   def index
-    @users = User.paginate(page: params[:page], per_page: 15)
+    @users = User.paginate(page: params[:page], per_page: 15).where.not(id: current_user.id)
+    @user = current_user
   end
 
   def edit
@@ -34,7 +35,7 @@ before_action :authenticate_user!
   def followers
     @title = "Followers"
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page]).where.not(id: current_user.id)
     render 'show_follow'
   end
 

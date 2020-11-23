@@ -98,4 +98,9 @@ Stylesheet: 960px以上のモニタで適用
   &__youtube-title {
     width: 650px;
   }
+  & .users {
+    flex-basis: 70%;
+    margin-left: 10px;
+   
+  }
 }
