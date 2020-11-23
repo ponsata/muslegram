@@ -71,7 +71,7 @@
 
 ◆レスポンシブデザイン対応 
 ## Authors
-  Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.online/)
+  Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.net/)
 ## Function/features to improve 
 - Circle ci 実装
 - テスト数を増やす
