@@ -107,6 +107,10 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   &__youtube-title {
     width: 500px;
   }
+  & .users {
+    width: 650px;
+    margin: 0 auto;
+  }
 }
 
 
@@ -151,3 +155,4 @@ Stylesheet: 600px以上のタブレットやモニタで適用
         margin-right: 30px;
     }
 }
+

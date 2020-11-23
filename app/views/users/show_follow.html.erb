@@ -1,7 +1,7 @@
 <div id="content">
   <div id= "main-content">
-    <div class="message">
-      <div class="message__user">
+    <div class="message appear up">
+      <div class="message__user item">
         <section class="message__user__info">
           <% if @user.image.present? %>  
             <%= image_tag @user.image.url, class: "message__user__icon", width: '100%'%>
@@ -30,16 +30,12 @@
           <%= link_to "Likes", user_likes_path(@user) %>
         </section>
       </div>
-      <div class="col-md-8">
-        <div class="user_index">
-          <h3><%= @title %></h3>
-          <% if @users.any? %>
-            <ul class="user">
-              <%= render @users %>
-            </ul>
-            <%= will_paginate %>
-          <% end %>
-        </div>
+      <div class="users item">
+        <h1><%= @title %></h1>
+        <ul class="users__pro">
+          <%= render @users %>
+        </ul>
+        <%= will_paginate %>
       </div>
     </div> 
   </div>
