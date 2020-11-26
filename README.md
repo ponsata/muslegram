@@ -34,8 +34,8 @@
 - Ruby 2.5.1
 - Rails 5.2.4
 - Rspec テスト環境の実装
-- Docker,Docker-compose（開発環境）
-- AWS/本番環境（EC2, RDS, VPC, EIP, Route53, IAM, S3, Docker ACM）
+- Docker,Docker-compose 仮想環境構築
+- AWS/インフラ構築（EC2, RDS, VPC, EIP, Route53, IAM, S3, Docker ACM）
 - Mac Catalina(10.15.5)
 - Amazon Linux 2
 - VSCode, Vim
@@ -49,7 +49,7 @@
 ◆フォロー機能
 - 非同期通信
 - 相互フォロー機能
-
+- フォロー・フォロワーの一覧表示
 ◆Youtube 動画視聴
 - youtube Video API使用
 - 動画一覧機能
@@ -59,19 +59,22 @@
 - 検索フォームからワードを入力するとyoutubeの動画を検索することができます。
 
 ◆投稿機能
-- 一覧表示 投稿、編集、削除機能
+- 一覧表示 投稿、編集、削除機能　CRUD
 
 ◆Llke機能
 - Likeボタン
+- ライク一覧表示
 - 非同期通信
 ◆プレイリスト機能 
-
 - ブックマーク作成と削除
-- ユーザマイページにてプレイリスト登録
+- ユーザマイページにてプレイリスト視聴　
 
+◆コメント機能 
+- 動画投稿に紐づくコメントの投稿
+- コメント表示・削除機能　　
 ◆レスポンシブデザイン対応 
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.net/)
 ## Function/features to improve 
 - Circle ci 実装
-- テスト数を増やす
+- テスト数が少ないので、優先して取り組んでおります。
