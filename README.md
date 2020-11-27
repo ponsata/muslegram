@@ -59,20 +59,23 @@
 - 検索フォームからワードを入力するとyoutubeの動画を検索することができます。
 
 ◆投稿機能
-- 一覧表示 投稿、編集、削除機能　CRUD
+- 一覧表示 投稿、編集、削除機能
 
 ◆Llke機能
 - Likeボタン
 - ライク一覧表示
 - 非同期通信
+
 ◆プレイリスト機能 
 - ブックマーク作成と削除
-- ユーザマイページにてプレイリスト視聴　
+- ユーザマイページにてプレイリスト視聴
 
 ◆コメント機能 
 - 動画投稿に紐づくコメントの投稿
-- コメント表示・削除機能　　
+- コメント表示・削除機能
+
 ◆レスポンシブデザイン対応 
+
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.net/)
 ## Function/features to improve 
