@@ -1,4 +1,42 @@
+<<<<<<< Updated upstream
 <h1>Editing Message</h1>
+=======
+<div id="content">
+  <div id= "main-content">
+    <div class="messages appear up">
+      <div class="messages__inner item">
+        <h1 class="messages__title">Let's Share!!</h1>
+        <div class="messages__video">
+          <div class="youtube">
+            <iframe data-src = "https://www.youtube.com/embed/<%= @message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="messages__youtube-title sub-title"> 
+          <%= @message.youtube.title %>
+        </div> 
+        <%= form_with(model: @message, url: message_path(youtube_id: @message.youtube.id), local: true) do |f| %>
+          <div class="contact-form row">
+             <div class="form-field col x-50">
+                <%= f.text_field :title, type: 'text', class: 'input-text js-input'%> 
+                <%= f.label :title, class: "label" %>
+             </div>
+             <div class="form-field col x-100">
+               <%= f.text_area :explanation,type: 'text', class: 'input-text js-input'%>
+               <%= f.label :explanation, class: "label" %>
+             </div>
+             <div class="form-field col x-100 align-center">
+                <%= f.submit 'Share', class:"submit-btn"%>
+             </div>
+             <div class="form-field col x-100">
+               <%= link_to '投稿に戻る', message_path %>
+             </div>
+          </div>
+        <% end %>    
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> Stashed changes
 
 <%= render 'form', message: @message %>
 

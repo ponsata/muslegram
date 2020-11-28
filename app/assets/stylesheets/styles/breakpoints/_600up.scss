@@ -1,0 +1,195 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+.font-sm {
+    font-size: 13px;
+  }
+  .font-md {
+    font-size: 13px;
+  }
+  .font-lr {
+    font-size: 17px;
+  }
+  .font-lg {
+    font-size: 25px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-lg {
+    padding-bottom: 150px !important;
+  }
+
+.flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.header {
+    &__search {
+        display: block;
+    }
+}
+
+.mobile-menu {
+
+  &__search{
+    display: none;
+  }
+
+}
+#content {
+  background-size: cover;
+}
+
+#main-content {
+  min-height: 700px;
+}
+
+.acount-page {
+    &__inner {
+        justify-content: space-between;
+        border: 10px solid #F5F5DC;
+        border-radius: 5px;
+        &__left {
+            flex-basis: 50%;
+            & > span {
+                display: block;
+            }
+        }
+        &__right {
+            flex-basis: 45%;
+        }
+    }
+}
+
+
+.messages {
+  &__video {
+    width: 500px;
+    height: 280px;
+    & .youtube {
+      width: 100%;
+      height: 100%;
+      & img {
+        height: 100%;
+      }
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__youtube-title {
+    width: 500px;
+  }
+}
+ 
+
+.message {
+  &__post {
+    & .youtube{   
+      width: 200px;
+      height: 117px;
+      & > iframe {
+        width: 200px;
+        height: 117px;
+      }
+    }
+  }
+  &__titles { 
+    & > a {
+      font-size: 20px;
+    }
+  }
+  &__user {
+    max-height: 220px;
+    width: 650px;
+
+  }
+  &__inner {
+    width: 650px;
+  }
+  &__box {
+    margin-bottom: 50px;
+  }
+  &__video {
+    width: 500px;
+    height: 280px;
+    margin: 0 auto;
+    & .youtube {
+      width: 100%;
+      height: 100%;
+      & img {
+        height: 100%;
+      }
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__youtube-title {
+    width: 500px;
+  }
+  & .users {
+    width: 650px;
+    margin: 0 auto;
+  }
+}
+
+
+.userbox {
+  margin: 0 auto;
+  max-width: 650px;
+  padding-top: $navHeight;
+  &__inner {
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+  &__left {
+    &__icon {
+      & > img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__name {
+    text-align: none;
+  }
+  &__right {
+    width:300px;
+    margin: 0;
+  }
+
+
+}
+
+
+
+
+
+.footer {
+    & .logo {
+        justify-content: flex-start;
+    }
+
+    &__li {
+        margin-left: 0;
+        margin-right: 30px;
+    }
+}
+
+.youtubes {
+  &__box {
+    & .youtube {
+      height: 180px;
+      & iframe { 
+        height: 100%;
+      }
+    }
+  }
+}
