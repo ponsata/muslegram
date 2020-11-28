@@ -1,7 +1,7 @@
 <div id="content">
   <div id= "main-content">
-    <div class="messages">
-      <div class="messages__inner">
+    <div class="messages appear up">
+      <div class="messages__inner item">
         <h1 class="messages__title">Let's Share!!</h1>
         <div class="messages__video">
           <div class="youtube">
@@ -34,3 +34,7 @@
   </div>
 </div>
 
+<%= render 'form', message: @message %>
+
+<%= link_to 'Show', @message %> |
+<%= link_to 'Back', messages_path %>

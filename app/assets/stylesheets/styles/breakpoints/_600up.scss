@@ -68,9 +68,18 @@ Stylesheet: 600px以上のタブレットやモニタで適用
 
 .messages {
   &__video {
+    width: 500px;
+    height: 280px;
     & .youtube {
-      width: 500px;
-      height: 280px;
+      width: 100%;
+      height: 100%;
+      & img {
+        height: 100%;
+      }
+      & iframe {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   &__youtube-title {
@@ -109,6 +118,7 @@ Stylesheet: 600px以上のタブレットやモニタで適用
   &__video {
     width: 500px;
     height: 280px;
+    margin: 0 auto;
     & .youtube {
       width: 100%;
       height: 100%;
