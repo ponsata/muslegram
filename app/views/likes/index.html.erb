@@ -39,8 +39,10 @@
                 <%= image_tag message.user.image.url, class: "user-icon" %>
               <% else %>
                 <%= image_tag asset_path("account-icon/account-icon.jpeg"), class: "user-icon" %>
-              <% end %>  
-              <iframe class= "youtube-icon"src="https://www.youtube.com/embed/<%= message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <% end %> 
+              <div class="youtube">
+                <iframe class= "youtube-icon" data-src="https://www.youtube.com/embed/<%= message.youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div> 
               <div class="message__name"> 
                  <%= link_to message.user.nickname, user_path(message.user) %>
               </div> 

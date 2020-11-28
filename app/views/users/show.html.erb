@@ -69,7 +69,9 @@
           <% @youtube = youtube%> 
           <div class="youtubes__item ">
             <div class= "youtubes__box item">
-              <iframe src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <div class="youtube">
+                <iframe data-src="https://www.youtube.com/embed/<%= @youtube.video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
               <div class="youtubes__channel">
                 <%= @youtube.channel_title %> 
               </div>

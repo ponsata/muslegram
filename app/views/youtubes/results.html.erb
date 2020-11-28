@@ -15,7 +15,7 @@
             <% @video_id = item.id.video_id %>
             <div class="youtubes__item appear up">
               <div class= "youtubes__box item">
-                <iframe src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="youtube"data-src="https://www.youtube.com/embed/<%= @video_id %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="youtubes__channel">
                   <%= @snippet.channel_title  %> 
                 </div>
