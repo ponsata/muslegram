@@ -34,10 +34,12 @@ Stylesheet: 960px以上のモニタで適用
   &__box {
     width: 400px;
     height: 100%;
-     iframe {
-       width: 100%; 
-       height: 224px;
-     }
+    & .youtube {
+      height: 224px;
+      & iframe { 
+        height: 100%;
+      }
+    }
   }
 
   &__description {
