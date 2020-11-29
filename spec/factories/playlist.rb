@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :playlist do
-    youtube
-    user # youtube,user にbelongs_toしている
+    association :youtube
+    association :user # youtube,user にbelongs_toしている
   end
 end
