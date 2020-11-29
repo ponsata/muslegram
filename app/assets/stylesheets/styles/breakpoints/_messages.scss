@@ -121,6 +121,7 @@
   @extend .flex;
   @extend .content-width;
   padding-top: $navHeight;
+  position: relative;
   &__user {
     margin: 0 auto 20px;
     width: 100%;
@@ -389,6 +390,11 @@
       margin-top: 10px;
       color: $cSubTitle;
     }
+  }
+  & > .alert{
+    position: absolute;
+    top: 30px;
+    left: -100px;
   }
 }
 

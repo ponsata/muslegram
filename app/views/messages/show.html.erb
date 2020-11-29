@@ -1,9 +1,9 @@
 <div id="content">
   <div id= "main-content">
     <div class="message appear up">
-      <% if alert.present? %>
-        <p class="alert item "><%= alert %></p>
-      <% end %>
+    <% if alert.present? %>
+      <div class="alert item "><%= alert %></div>
+    <% end %>
       <div class="message__user item">
         <section class="message__user__info">
           <% if @user.image.present? %>  
