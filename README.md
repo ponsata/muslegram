@@ -77,6 +77,9 @@
 
 ◆レスポンシブデザイン対応 
 
+◆Rspec 
+- 単体テスト サンプル数50 
+
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.net/)
 ## Function/features to improve 
