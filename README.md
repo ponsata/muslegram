@@ -10,9 +10,9 @@
   Youtubeは、現代の学べるプラットフォームであると考えているので、それを生かした付加価値を乗っけられるようなポートフォリオサイトを作りたいと思いました。
   デザインや機能等はあえてシンプルにして、誰でも手取り早く使えるにしております。
 ## Point 
-  GCP()Google Cloud Platform)を用いたyoutube動画検索機能です。
+  youtubeDataAPIv3を用いたyoutube動画検索機能です。
   お好きなワードを入力するとYoutube Data API にアクセスすることで、サービス内で動画視聴することができます。
-  またユーザが検索視聴履歴は、ホーム画面で共有されますので、ユーザーが、どんな動画を見ているかを確認することができます。
+  またユーザが検索視聴履歴は、ホーム画面で共有されますので、ユーザーがどんな動画を見ているかを確認することができます。
   ### あなたのおすすめの動画が見つかったら、動画の感想を投稿してみよう！！
 ## Production environment 
   [Musclegram/サイトURL](https://musclegram.net/)
@@ -80,5 +80,7 @@
 ## Authors
   Takahiro Satake - [Github](https://github.com/takahirosatake)  - [Musclegram/サイトURL](http://musclegram.net/)
 ## Function/features to improve 
-- Circle ci 実装
 - テスト数が少ないので、優先して取り組んでおります。
+- 投稿タグ付機能 / 投稿検索
+- サイト内動画検索機能と該当ワード検索機能
+- フロントフレームワークにVue.js / UIライブラリーにVuetifyを導入
