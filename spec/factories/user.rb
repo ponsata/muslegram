@@ -6,6 +6,7 @@ FactoryBot.define do
     password {password}
     password_confirmation {password}
     image {Faker::Avatar.image(slug: "my-own-slug") }#=> "https://robohash.org/my-own-slug.png?size=300x300&set=set1"
+    profile {Faker::Lorem.sentence}
   end
 
 end

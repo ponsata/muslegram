@@ -9,6 +9,10 @@ class User < ApplicationRecord
   has_many :playlist_youtubes, through: :playlists, source: :youtube
   validates :nickname, presence:true
   validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i} #同一メールアドレスを登録できないようにする。
+  validates :password, presence: true, length: { minimum: 8 }
+  VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i #半角英数字のみの登録
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
+  validates :password_confirmation, presence: true
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed

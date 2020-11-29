@@ -11,17 +11,17 @@ RSpec.describe Playlist, type: :model do
         expect(@playlist).to be_valid
       end
     end 
-
+    
     context '登録できない場合' do
       it "user_idがnilの場合、無効であること" do
         @playlist.user = nil
         @playlist.valid?
-        expect(@playlist.errors.full_messages).to include("user_id can't be blank")
+        expect(@playlist).to_not be_valid
       end
       it "youtube_idがnilの場合、無効であること" do
         @playlist.youtube = nil
         @playlist.valid?
-        expect(@playlist.errors.full_messages).to include("youtube_id can't be blank")
+        expect(@playlist).to_not be_valid
       end
     end
   end

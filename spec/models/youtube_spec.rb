@@ -15,37 +15,37 @@ RSpec.describe Youtube, type: :model do
       it 'channel_idが空の場合保存できないこと' do
         @youtube.channel_id = " "
         @youtube.valid?
-        expect(@youtube.errors.full_messages).to include("channel_id can't be blank")
+        expect(@youtube).to_not be_valid
       end
       it 'channel_titleが空の場合保存できないこと' do
         @youtube.channel_title = " "
         @youtube.valid?
-        expect(@youtube.errors.full_messages).to include("channel_title can't be blank")
+        expect(@youtube).to_not be_valid
       end
 
       it 'titleが無いと保存できないこと' do
         @youtube.title = nil  
         @youtube.valid?
-        expect(@youtube.errors.full_messages).to include("title can't be blank")
+        expect(@youtube).to_not be_valid
       end
 
       it "descriptionがないの場合、保存できないこと" do
         @youtube.description = nil
-        @myoutube.valid?
-        expect(@youtube.errors.full_messages).to include("description can't be blank")
+        @youtube.valid?
+        expect(@youtube).to_not be_valid
       end
       
       it "video_idがないの場合、保存できないこと" do
         @youtube.video_id = nil
         @youtube.valid?
-        expect(@youtube.errors.full_messages).to include("video_id can't be blank")
+        expect(@youtube).to_not be_valid
       end
       it 'video_idがすでに登録してあるものと重複している場合、登録できない' do
         @youtube.save
         another_youtube = FactoryBot.build(:youtube)
         another_youtube.video_id = @youtube.video_id
         another_youtube.valid?
-        expect(another_youutube.errors.full_messages).to include('Video_id has already been taken')
+        expect(another_youtube).to_not be_valid
       end
     end
   end
