@@ -4,3 +4,6 @@ class Playlist < ApplicationRecord
 
   validates :user_id, :youtube_id,  presence: true
 end
+
+
+

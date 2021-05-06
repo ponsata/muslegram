@@ -19,6 +19,7 @@ COPY config/database.yml /myapp/config/database.yml
 RUN mkdir -p tmp/sockets
 RUN mkdir -p tmp/pids
 
+RUN gem install bundler
 RUN bundle install
 COPY . /myapp
 
